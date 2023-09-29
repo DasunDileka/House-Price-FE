@@ -121,18 +121,18 @@ const AppLayout: React.FC<{
           <aside className={'navBarContent'}>
             <div className="contentGroup">
               {/* <img className="logo" src={acenturaLogo} /> */}
-              <h2 className={styles.h2}>Loan Management System</h2>
+              <h2 className={styles.h2}>House Prediction System</h2>
               <NavLink className={({ isActive }) => (isActive ? 'navLink is-active' : 'navLink')}
                  to={APP_ROUTES.HOME}>
                   <DashboardOutlinedIcon />
-                  Loan Management
+                  House Prediction
                 </NavLink>
                 <NavLink className={({ isActive }) => (isActive ? 'navLink is-active' : 'navLink')}
                   to={APP_ROUTES.PRODUCT} >
                   <BadgeOutlined />
-                  Product Mangement
+                  House Details
                 </NavLink>
-                <NavLink className={({ isActive }) => (isActive ? 'navLink is-active' : 'navLink')}
+                {/* <NavLink className={({ isActive }) => (isActive ? 'navLink is-active' : 'navLink')}
                   to={APP_ROUTES.BRAND} >
                   <AccountTreeOutlinedIcon />
                   Brand Management
@@ -141,7 +141,7 @@ const AppLayout: React.FC<{
                   to={APP_ROUTES.CATEGORY} >
                   <AccountTreeOutlinedIcon />
                   Category Management
-                </NavLink>
+                </NavLink> */}
             </div>
           </aside>
         </aside>
