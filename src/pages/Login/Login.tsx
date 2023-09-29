@@ -45,7 +45,10 @@ const Login = () => {
   const loginResponse = useSelector((state: any) => state.login.signInUser)
   const loginAlert = useSelector((state: any) => state.alert.signinUserAlert)
 
+
+
   React.useEffect(() => {
+    console.log("login",loginResponse);
     if (loginResponse.status === APP_ACTION_STATUS.SUCCESS) {
       const loggerUser: SignInUserDetailDto = loginResponse.data
       if (loggerUser) {
