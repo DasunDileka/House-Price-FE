@@ -207,7 +207,7 @@ const Products = () => {
           <br />
         </div>
       )}
-      <AppLayout componentTitle='Product Management' breadcrumb='Dashboard'>
+      <AppLayout componentTitle='House Details' breadcrumb='Dashboard'>
         <br />
         <AddProduct
           categoryList={categoryList || []}

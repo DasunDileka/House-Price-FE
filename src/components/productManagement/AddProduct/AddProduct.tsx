@@ -30,7 +30,7 @@ const AddProduct: React.FC<{
         expandIcon={<ExpandMoreIcon />}
         className={'accordionSummaryStyle'}
       >
-        <h1>Add a Product</h1>
+        <h1>Add a House</h1>
       </AccordionSummary>
       <AccordionDetails >
         <Divider />
@@ -41,7 +41,7 @@ const AddProduct: React.FC<{
               fullWidth
               size='small'
               id="outlined-basic"
-              label="Name"
+              label="Location"
               variant="outlined"
               value={!props.isEditProduct ? props.formData.name.value : props.editFormRowData.name.value}
               error={!!props.formData.name.error}
@@ -54,7 +54,7 @@ const AddProduct: React.FC<{
               inputProps={{ style: { fontSize: 13 } }}
               InputLabelProps={{ style: { fontSize: 13 } }}
               onChange={(e) =>
-                props.onInputHandleChange('name', e.target.value)
+                props.onInputHandleChange('Location', e.target.value)
               }
             />
           </Grid>
@@ -63,7 +63,7 @@ const AddProduct: React.FC<{
               fullWidth
               size='small'
               id="outlined-basic"
-              label="Price"
+              label="Bath Rooms"
               variant="outlined"
               value={!props.isEditProduct ? props.formData.price.value : props.editFormRowData.price.value}
               error={!!props.formData.price.error}
@@ -76,7 +76,7 @@ const AddProduct: React.FC<{
               inputProps={{ style: { fontSize: 13 } }}
               InputLabelProps={{ style: { fontSize: 13 } }}
               onChange={(e) =>
-                props.onInputHandleChange('price', e.target.value)
+                props.onInputHandleChange('Bathrooms', e.target.value)
               }
             />
           </Grid>
@@ -85,7 +85,7 @@ const AddProduct: React.FC<{
               fullWidth
               size='small'
               id="outlined-basic"
-              label="Quantity"
+              label="Bed Rooms"
               variant="outlined"
               value={!props.isEditProduct ? props.formData.quantity.value : props.editFormRowData.quantity.value}
               error={!!props.formData.quantity.error}
@@ -98,16 +98,215 @@ const AddProduct: React.FC<{
               inputProps={{ style: { fontSize: 13 } }}
               InputLabelProps={{ style: { fontSize: 13 } }}
               onChange={(e) =>
-                props.onInputHandleChange('quantity', e.target.value)
+                props.onInputHandleChange('BedRooms', e.target.value)
               }
             />
           </Grid>
+          <Grid item xs={4}>
+            <TextField
+              fullWidth
+              size='small'
+              id="outlined-basic"
+              label="LivingArea(sqft)"
+              variant="outlined"
+              value={!props.isEditProduct ? props.formData.name.value : props.editFormRowData.name.value}
+              error={!!props.formData.name.error}
+              helperText={
+                props.formData.name.error
+                  ? props.formData.name.error
+                  : null
+              }
+              style={{ width: '100%' }}
+              inputProps={{ style: { fontSize: 13 } }}
+              InputLabelProps={{ style: { fontSize: 13 } }}
+              onChange={(e) =>
+                props.onInputHandleChange('LivingArea', e.target.value)
+              }
+            />
+          </Grid>
+          <Grid item xs={4}>
+            <TextField
+              fullWidth
+              size='small'
+              id="outlined-basic"
+              label="LandArea(perch)"
+              variant="outlined"
+              value={!props.isEditProduct ? props.formData.price.value : props.editFormRowData.price.value}
+              error={!!props.formData.price.error}
+              helperText={
+                props.formData.price.error
+                  ? props.formData.price.error
+                  : null
+              }
+              style={{ width: '100%' }}
+              inputProps={{ style: { fontSize: 13 } }}
+              InputLabelProps={{ style: { fontSize: 13 } }}
+              onChange={(e) =>
+                props.onInputHandleChange('LandArea', e.target.value)
+              }
+            />
+          </Grid>
+          <Grid item xs={4}>
+            <TextField
+              fullWidth
+              size='small'
+              id="outlined-basic"
+              label="Floors"
+              variant="outlined"
+              value={!props.isEditProduct ? props.formData.quantity.value : props.editFormRowData.quantity.value}
+              error={!!props.formData.quantity.error}
+              helperText={
+                props.formData.quantity.error
+                  ? props.formData.quantity.error
+                  : null
+              }
+              style={{ width: '100%' }}
+              inputProps={{ style: { fontSize: 13 } }}
+              InputLabelProps={{ style: { fontSize: 13 } }}
+              onChange={(e) =>
+                props.onInputHandleChange('Floors', e.target.value)
+              }
+            />
+          </Grid>
+          <Grid item xs={4}>
+            <TextField
+              fullWidth
+              size='small'
+              id="outlined-basic"
+              label="School"
+              variant="outlined"
+              value={!props.isEditProduct ? props.formData.name.value : props.editFormRowData.name.value}
+              error={!!props.formData.name.error}
+              helperText={
+                props.formData.name.error
+                  ? props.formData.name.error
+                  : null
+              }
+              style={{ width: '100%' }}
+              inputProps={{ style: { fontSize: 13 } }}
+              InputLabelProps={{ style: { fontSize: 13 } }}
+              onChange={(e) =>
+                props.onInputHandleChange('school', e.target.value)
+              }
+            />
+          </Grid>
+          <Grid item xs={4}>
+            <TextField
+              fullWidth
+              size='small'
+              id="outlined-basic"
+              label="Shopping-Mall"
+              variant="outlined"
+              value={!props.isEditProduct ? props.formData.price.value : props.editFormRowData.price.value}
+              error={!!props.formData.price.error}
+              helperText={
+                props.formData.price.error
+                  ? props.formData.price.error
+                  : null
+              }
+              style={{ width: '100%' }}
+              inputProps={{ style: { fontSize: 13 } }}
+              InputLabelProps={{ style: { fontSize: 13 } }}
+              onChange={(e) =>
+                props.onInputHandleChange('shopping', e.target.value)
+              }
+            />
+          </Grid>
+          <Grid item xs={4}>
+            <TextField
+              fullWidth
+              size='small'
+              id="outlined-basic"
+              label="Transport"
+              variant="outlined"
+              value={!props.isEditProduct ? props.formData.quantity.value : props.editFormRowData.quantity.value}
+              error={!!props.formData.quantity.error}
+              helperText={
+                props.formData.quantity.error
+                  ? props.formData.quantity.error
+                  : null
+              }
+              style={{ width: '100%' }}
+              inputProps={{ style: { fontSize: 13 } }}
+              InputLabelProps={{ style: { fontSize: 13 } }}
+              onChange={(e) =>
+                props.onInputHandleChange('transport', e.target.value)
+              }
+            />
+          </Grid>
+          <Grid item xs={4}>
+            <TextField
+              fullWidth
+              size='small'
+              id="outlined-basic"
+              label="Date"
+              variant="outlined"
+              value={!props.isEditProduct ? props.formData.name.value : props.editFormRowData.name.value}
+              error={!!props.formData.name.error}
+              helperText={
+                props.formData.name.error
+                  ? props.formData.name.error
+                  : null
+              }
+              style={{ width: '100%' }}
+              inputProps={{ style: { fontSize: 13 } }}
+              InputLabelProps={{ style: { fontSize: 13 } }}
+              onChange={(e) =>
+                props.onInputHandleChange('date', e.target.value)
+              }
+            />
+          </Grid>
+          <Grid item xs={4}>
+            <TextField
+              fullWidth
+              size='small'
+              id="outlined-basic"
+              label="CurrencyRate"
+              variant="outlined"
+              value={!props.isEditProduct ? props.formData.price.value : props.editFormRowData.price.value}
+              error={!!props.formData.price.error}
+              helperText={
+                props.formData.price.error
+                  ? props.formData.price.error
+                  : null
+              }
+              style={{ width: '100%' }}
+              inputProps={{ style: { fontSize: 13 } }}
+              InputLabelProps={{ style: { fontSize: 13 } }}
+              onChange={(e) =>
+                props.onInputHandleChange('CurrencyRate', e.target.value)
+              }
+            />
+          </Grid>
+          <Grid item xs={4}>
+            <TextField
+              fullWidth
+              size='small'
+              id="outlined-basic"
+              label="Price"
+              variant="outlined"
+              value={!props.isEditProduct ? props.formData.quantity.value : props.editFormRowData.quantity.value}
+              error={!!props.formData.quantity.error}
+              helperText={
+                props.formData.quantity.error
+                  ? props.formData.quantity.error
+                  : null
+              }
+              style={{ width: '100%' }}
+              inputProps={{ style: { fontSize: 13 } }}
+              InputLabelProps={{ style: { fontSize: 13 } }}
+              onChange={(e) =>
+                props.onInputHandleChange('Price', e.target.value)
+              }
+            />
+          </Grid>
+          
           <Grid item xs={12}>
             <TextField
               fullWidth
               size='small'
               id="outlined-basic"
-              label="Description"
+              label="Reference"
               variant="outlined"
               value={!props.isEditProduct ? props.formData.description.value : props.editFormRowData.description.value}
               error={!!props.formData.description.error}
@@ -120,11 +319,12 @@ const AddProduct: React.FC<{
               inputProps={{ style: { fontSize: 13 } }}
               InputLabelProps={{ style: { fontSize: 13 } }}
               onChange={(e) =>
-                props.onInputHandleChange('description', e.target.value)
+                props.onInputHandleChange('Reference', e.target.value)
               }
             />
           </Grid>
-          <Grid item xs={6}>
+
+          {/* <Grid item xs={6}>
             <Autocomplete
               size="small"
               disabled={!!props.editFormRowData.categoryId.disable}
@@ -203,7 +403,7 @@ const AddProduct: React.FC<{
                 />
               )}
             />
-          </Grid>
+          </Grid> */}
           <Grid item md={4}>
           {props.isEditProduct ?
               <Button
@@ -225,7 +425,7 @@ const AddProduct: React.FC<{
                 disabled={props.addProductLoader}
               >
                 {(props.addProductLoader) && <CircularProgress color="primary" size={20} />}
-                Add Product
+                Add Details
               </Button>
             }
           </Grid>
