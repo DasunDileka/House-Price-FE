@@ -1,0 +1,629 @@
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap");
+@import "./constants.scss";
+
+body {
+  margin: 0;
+  font-family: $primaryFont;
+  font-size: $primaryFontSize;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 400;
+  font-family: $primaryFont;
+}
+
+.title-font {
+  line-height: 40px;
+  font-weight: 400;
+}
+
+.f-48 {
+  font-size: 48px;
+}
+
+.f-32 {
+  font-size: 32px;
+}
+
+.f-24 {
+  font-size: 24px;
+}
+
+.f-20 {
+  font-size: 20px;
+}
+
+.f-16 {
+  font-size: 16px;
+}
+
+.f-14 {
+  font-size: 14px;
+}
+
+.f-12 {
+  font-size: 12px;
+}
+
+
+.sectionTitleHolder {
+  // padding-bottom: 10px !important;
+  h3 {
+    font-size: 20px;
+    margin: 0;
+    padding-bottom: 3px;
+  }
+
+  p {
+    margin: 0 0 12px;
+  }
+}
+
+// .fc {
+//   .fc-day-today {
+//     background-color: #dbeeff !important;
+//   }
+
+//   .fc-toolbar-title {
+//     font-size: 18px !important;
+//   }
+
+//   .fc-button-primary {
+//     padding: 6px 16px;
+//     font-size: $primaryFontSize;
+//     background-color: $primary !important;
+//     border: none !important;
+//     line-height: 1.75;
+//     border-radius: 4px;
+//     text-transform: uppercase !important;
+//   }
+
+//   .fc-button-group {
+//     button {
+//       background: $primary !important;
+//       border: none !important;
+//       margin: 0 2px !important;
+//       outline: none !important;
+//       box-shadow: none !important;
+//     }
+//   }
+// }
+
+// .MuiAlert-root {
+//   padding: 1px 16px !important;
+// }
+.accordionStyle{
+  border: 1px solid $tertiary;
+  box-shadow: none !important;
+  border-radius: 0% !important;
+}
+
+.accordionSummaryStyle{
+  min-height: 50px !important;
+  margin: 0px 0px !important;
+}
+
+.breadcrumb {
+  width: 100%;
+  font-size: 15px;
+  // padding: 16px 12px 12px 0px;
+  margin: 0px;
+  background: white;
+  margin-bottom: 10px;
+
+  a {
+    color: inherit;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.authorizedContainer {
+  height: 100%;
+  overflow: hidden;
+
+  .sideNavigation {
+    @include transition(ease all 0.4s);
+    max-width: 220px;
+    z-index: 999;
+
+    &.collapsed {
+      @include transition(ease all 0.4s);
+      max-width: 50px;
+    }
+
+    .navBar {
+      position: relative;
+      background: #000000;
+      max-width: 50px;
+      padding: 16px 4px;
+      border-right: 1px solid $primary;
+
+      .menuBox {
+        @include transition(ease all 0.4s);
+        margin: 8px;
+        cursor: pointer;
+
+        .menuIcon {
+          display: inline-block;
+          width: 25px;
+          cursor: pointer;
+
+          span {
+            @include transition(ease all 0.4s);
+            position: relative;
+            display: inline-block;
+            width: 100%;
+            height: 2px;
+            margin: 9px 0;
+            background: $secondary;
+
+            &::before {
+              @include transition(ease all 0.4s);
+              content: "";
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              left: 0;
+              top: -9px;
+              background:$secondary;
+            }
+
+            &::after {
+              @include transition(ease all 0.4s);
+              content: "";
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              left: 0;
+              top: 9px;
+              background: $secondary;
+            }
+          }
+        }
+
+        &:hover {
+          @include transition(ease all 0.4s);
+
+          .menuIcon {
+            span {
+              @include transition(ease all 0.4s);
+              background: $black;
+
+              &::before {
+                @include transition(ease all 0.4s);
+                width: 50%;
+                transform: rotate(-45deg);
+                top: -4px;
+              }
+
+              &::after {
+                @include transition(ease all 0.4s);
+                width: 50%;
+                transform: rotate(45deg);
+                top: 4px;
+              }
+            }
+          }
+        }
+
+        &.collapsed {
+          @include transition(ease all 0.4s);
+          transform: rotate(-360deg);
+
+          .menuIcon {
+            span {
+              background:$black;
+
+              &::before {
+                width: 60%;
+                transform: rotate(45deg);
+                top: -4px;
+              }
+
+              &::after {
+                width: 60%;
+                transform: rotate(-45deg);
+                top: 6px;
+              }
+            }
+          }
+        }
+      }
+
+      .appLinkIconGroup {
+        padding: 5px;
+        margin-top: 51px;
+
+        .appLinkIcon {
+          padding: 2px;
+          cursor: pointer;
+          margin: 15px 0;
+        }
+      }
+
+      .logo {
+        padding: 0 7px;
+        margin-bottom: 14px;
+      }
+
+      .profile {
+        position: absolute;
+        bottom: 16px;
+        left: 0;
+        padding: 9px;
+        width: 100%;
+
+        .infoCircle {
+          background: $secondary;
+          color: $primary;
+          font-size: 17px;
+          width: 28px;
+          height: 28px;
+          border-radius: 50%;
+          font-weight: 700;
+          text-transform: uppercase;
+        }
+
+        .infoMenu {
+          background: $secondary;
+          padding: 11px;
+          position: absolute;
+          left: 100%;
+          bottom: 0;
+          display: none;
+          border-radius: 5px;
+          border: 1px solid rgba(0, 0, 0, 0.1);
+          min-width: 240px;
+          z-index: 9;
+
+          .name {
+            text-transform: uppercase;
+            color: $gray;
+            font-size: 14px;
+            margin: 0;
+          }
+
+          .email {
+            display: block;
+            color: $gray;
+            font-size: 14px;
+            padding-bottom: 4px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            margin-bottom: 12px;
+          }
+          .switchRole {
+            position: relative;
+            display: inline-block;
+            margin-right: -30px !important;
+            a {
+              min-width: 220px;
+            }
+
+            .switchRoleArrow {
+              display: block;
+              color: $gray;
+              width: 25px;
+              height: 25px;
+              font-size: 20px;
+            
+             
+              //  margin-left: 100px;
+            } 
+          }
+          .roleMenu {
+            // overflow: hidden;
+            background: $secondary;
+            padding: 11px;
+            position: absolute;
+            left: 100%;
+       
+            bottom: 5%;
+            display: none;
+            border-radius: 5px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            min-width: 200px;
+            z-index: 9;
+
+            .switchRoleDiv {
+              padding: 5px 5px 5px 2px;
+              border-bottom: 1px solid rgba(0, 0, 0, 0.1),
+                // hide last border 
+            }
+
+            .switchRoleDiv_last {
+              padding: 5px 5px 5px 2px;
+              border-bottom: none // hide last border
+
+            }
+          }
+
+
+          .switchRole:hover {
+            .roleMenu {
+              display: block;
+              box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.1);
+              z-index: 99;
+            }
+          }
+
+          // .switchRole{
+          //  //  padding: 5px 5px 5px 2px ;
+          //   border-bottom: 1px solid rgba(0, 0, 0, 0.1),
+          //   // hide last border
+           
+          // }
+          // .switchRoleDiv{
+          //   padding: 5px 5px 5px 2px ;
+          //   border-bottom: 1px solid rgba(0, 0, 0, 0.1),
+           
+           
+          // }
+          // .switchRoleDiv_last{
+          //   padding: 5px 5px 5px 2px ;
+          //   border-bottom: none
+          //   // hide last border
+           
+          // }
+          // .switchRoleArrow{
+          //   display: block;
+          //   color: $gray;
+          //   width: 25px;
+          //   height: 25px;
+          //   font-size: 20px;
+          //   margin-left: 130px;
+           
+          // }
+          // .roleMenu {
+          //   background: white;
+          //   padding: 11px;
+          //   position: absolute;
+          //   left: 100%;
+          //   bottom: 30%;
+          //   display: none;
+          //   border-radius: 5px;
+          //   border: 1px solid rgba(0, 0, 0, 0.1);
+          //   min-width: 200px;
+          //   z-index: 9;
+            
+          // }
+          //  &:hover {
+          //   .roleMenu {
+          //     display: block;
+          //     box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.1);
+          //     z-index: 99;
+          //   }
+          // }
+         
+
+          a {
+            @include transition(ease all 0.4s);
+            text-decoration: none;
+            display: block;
+            padding: 7px 4px;
+
+            &.signOut {
+              color: $red;
+              border-top: 1px solid rgba(0, 0, 0, 0.1);
+            }
+
+            &:hover {
+              @include transition(ease all 0.4s);
+              background: #f4f4f4;
+            }
+          }
+        }
+
+        &:hover {
+          .infoMenu {
+            display: block;
+            box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.1);
+            z-index: 99;
+          }
+        }
+     
+       
+      }
+    }
+
+    .navBarContent {
+      @include transition(ease all 0.4s);
+      position: relative;
+      background: $black;
+      border-right: 1px solid $primary;
+      box-shadow: 3px 2px 10px rgba(0, 0, 0, 0.1);
+      padding: 16px;
+      opacity: 1;
+      max-width: 230px;
+    //  min-height: 200px;
+    //   overflow-y: scroll;
+
+      &.collapsed {
+        @include transition(ease all 0.4s);
+        opacity: 0;
+        overflow: hidden;
+        max-width: 0;
+        padding: 16px 0;
+      }
+
+      .contentGroup {
+        .logo {
+          padding: 14px 0 0;
+          max-width: 100px;
+        }
+
+        h1 {
+          margin: 2px 0 26px;
+          color: $white;
+          font-size: 22px;
+          white-space: nowrap;
+          font-weight: 400;
+          line-height: 1.5em;
+        }
+
+        .navLink {
+          @include transition(ease all 0.4s);
+          text-decoration: none;
+          display: block;
+          padding: 8px 0;
+          border-bottom: 1px solid $secondary;
+          color: $white;
+          .MuiSvgIcon-root {
+            margin-right: 7px;
+            vertical-align: middle;
+            color: $white;
+          }
+          .MuiListItemButton-root {
+            &:hover{
+              background: $secondary;
+            }
+          }
+          
+          &:hover {
+            @include transition(ease all 0.4s);
+             background: $secondary;
+          }
+          &.is-active {  
+             background: $secondary;
+          }
+          
+        }
+        .netstedDiv{
+          height: 43px;
+          width: 100%;
+          // display: inline-block;
+          color: $secondary;
+          // background: #f4f4f4 !important;
+          text-decoration: none!important;
+          font-size: 14px!important;
+          padding: 10px 0 5px 30px;
+          border: none;
+          border-bottom: 1px solid #cccccc;
+        }
+      }
+    }
+  }
+
+  .content {
+    padding: 24px;
+    overflow: scroll;
+  }
+}
+
+.primarybtnStyle {
+  text-transform: capitalize !important;
+  padding-bottom: 7px !important;
+  margin-right: 16px !important;
+  color: $tertiary !important;
+  background-color: $primary !important;
+}
+// .cancelBtnStyle {
+//   text-transform: capitalize !important;
+//   padding-bottom: 7px !important;
+//   margin-right: 16px !important;
+// }
+// .dashboardbtnStyle {
+//   text-transform: capitalize !important;
+//   padding-bottom: 7px !important;
+//   // margin-right: 16px !important;
+// }
+// .filterBtn {
+//   text-transform: capitalize !important;
+//   padding-bottom: 7px !important;
+//   margin-right: 7px !important;
+// }
+
+// .dividerStyle {
+//   padding-bottom: 0px !important;
+//   padding-top: 0px !important;
+//   //  margin-bottom: 20px !important;
+// }
+
+// .editIconStyle {
+//   margin-right: 10px !important;
+// }
+
+// .dialogContainer {
+//   width: 500px;
+// }
+// .customDatePicker {
+//   border: none !important;
+// }
+
+// .react-datepicker-wrapper input[type="text"] {
+//   border: none;
+// }
+
+// .deallocateButtonStyle {
+//   color: $primary !important;
+// }
+// .disabledDeallocateButtonStyle {
+//   color: $gray !important;
+// }
+
+// .isconfirmedActionButtonStyle {
+//   color: $accent !important;
+// }
+// .actionClosedButtonStyle {
+//   color: $red !important;
+// }
+// .numberTextFielStyle {
+//   padding-left: 5px !important;
+// }
+// .css-nz481w-MuiInputBase-input-MuiInput-input{
+//   padding-left: 12px !important;
+// }
+// .worningStyle {
+//   color: $red !important;
+//   font-weight: 600 !important;
+// }
+.navLink {
+  @include transition(ease all 0.4s);
+  text-decoration: none;
+  display: block;
+  color: $secondary;
+}
+
+// .expiredDateStyle {
+//   color: $red !important;
+// }
+// .futureDateStyle {
+//   color: $accent !important;
+// }
+// .drawerStyle {
+//   padding-left: 12px !important;
+//   padding-bottom: 10px !important;
+// }
+
+// .MuiAutocomplete-option {
+//   text-align: left !important;
+//   padding-left: 6px !important;
+//   padding-right: 6px !important;
+//   padding-bottom: 6px !important;
+// }
+
+// .inlineGrid{    padding-top: 4px;
+// }
+// .loggedUserDetails{
+//   bottom: 30px;
+//   position: fixed;
+//   .name{
+//     // padding-left: -2px;
+//     padding: 1px 1px 1px -5px;
+//     font-size: 12px;
+//   }
+//   .email{
+//     // padding-left: -2px;
+//     padding: 1px 1px 1px -5px;
+//     font-size: 10px;
+//   }
+//   // padding-top: 1000px ;
+//   // padding-bottom: 10px ;
+// }
