@@ -13,10 +13,10 @@ const ViewProduct: React.FC<{
     <>
       <Grid container spacing={2} sx={{ paddingTop: '20px' }}>
         <Grid item md={6}>
-          <h2>Product Details</h2>
+          <h2>House Details</h2>
         </Grid>
       </Grid>
-      <Table sx={{ marginTop: '20px' }}>
+      {/* <Table sx={{ marginTop: '20px' }}>
         <TableHead>
           <TableRow>
             <StyledTableCell></StyledTableCell>
@@ -53,7 +53,7 @@ const ViewProduct: React.FC<{
             </TableRow>
           ))}
         </TableBody>
-      </Table>
+      </Table> */}
     </>
   )
 }

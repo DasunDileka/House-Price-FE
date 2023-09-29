@@ -5,6 +5,6 @@ export enum APP_ROUTES {
   HOME = '/home',
   BRAND = '/brand',
   CATEGORY = '/category',
-  PRODUCT = '/product',
+  HOUSE = '/House',
   CUSTOMER_HOME = '/customer-home'
 }

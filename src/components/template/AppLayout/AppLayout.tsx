@@ -128,7 +128,7 @@ const AppLayout: React.FC<{
                   House Prediction
                 </NavLink>
                 <NavLink className={({ isActive }) => (isActive ? 'navLink is-active' : 'navLink')}
-                  to={APP_ROUTES.PRODUCT} >
+                  to={APP_ROUTES.HOUSE} >
                   <BadgeOutlined />
                   House Details
                 </NavLink>
