@@ -32,7 +32,5 @@ axiosPublicInstance.interceptors.response.use(async (response) => {
   return Promise.reject(await exceptionHandler(error.response))
 })
 
-export * from './category.service'
-export * from './brand.service'
 export * from './registration.service'
 export * from './login.service'

@@ -3,7 +3,6 @@ export enum APP_ROUTES {
   ROOT = '/',
   REGISTER = '/register',
   HOME = '/home',
-  BRAND = '/brand',
   CATEGORY = '/category',
   HOUSE = '/House',
   CUSTOMER_HOME = '/customer-home'

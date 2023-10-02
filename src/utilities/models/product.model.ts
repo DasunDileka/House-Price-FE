@@ -1,5 +1,3 @@
-import { BrandListDto } from "./brand.model";
-import { categoryListDto } from "./category.model";
 import { FormValidatorFeildDto } from "./core.model";
 
  export interface productListDto {
@@ -20,8 +18,6 @@ import { FormValidatorFeildDto } from "./core.model";
    price: number | null,
    quantity: number | null,
    description: string,
-   categoryId: number | null,
-   brandId: number | null,
    userId: number,
  }
  export interface ProductEditDto {
@@ -30,8 +26,6 @@ import { FormValidatorFeildDto } from "./core.model";
    price: number | null,
    quantity: number | null,
    description: string,
-   categoryId: number,
-   brandId: number,
    userId: number,
  }
 
@@ -40,8 +34,7 @@ import { FormValidatorFeildDto } from "./core.model";
   price: FormValidatorFeildDto<number | null>,
   quantity: FormValidatorFeildDto<number | null>,
   description: FormValidatorFeildDto<string>,
-  categoryId: FormValidatorFeildDto<categoryListDto>,
-  brandId: FormValidatorFeildDto<BrandListDto>,
+
  }
  export interface ProductUpdateStateDto {
   id:  FormValidatorFeildDto<number>,
@@ -49,6 +42,4 @@ import { FormValidatorFeildDto } from "./core.model";
   price: FormValidatorFeildDto<number | null>,
   quantity: FormValidatorFeildDto<number | null>,
   description: FormValidatorFeildDto<string>,
-  categoryId: FormValidatorFeildDto<categoryListDto>,
-  brandId: FormValidatorFeildDto<BrandListDto>,
  }

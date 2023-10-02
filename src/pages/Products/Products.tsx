@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react'
-import { AlertDto, BrandListDto, ProductEditDto, ProductInfoDto, ProductInitialStateDto, ProductUpdateStateDto, SignInUserDetailDto, categoryListDto, productListDto } from '../../utilities/models';
+import { AlertDto,ProductEditDto, ProductInfoDto, ProductInitialStateDto, ProductUpdateStateDto, SignInUserDetailDto,productListDto } from '../../utilities/models';
 import { useDispatch, useSelector } from 'react-redux';
-import { CategoryActions, brandActions, productActions } from '../../redux/actions';
 import { AppLayout } from '../../components';
 import AddProduct from '../../components/productManagement/AddProduct/AddProduct';
 import ViewProduct from '../../components/productManagement/ViewProduct/ViewProduct';
 import MuiAlert, { AlertProps } from '@mui/material/Alert'
 import { validateFormData } from '../../utilities/helpers';
 import { Snackbar } from '@mui/material';
+import { productActions } from '../../redux/actions';
 
 const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
   props,
@@ -22,8 +22,6 @@ const Products = () => {
     price: { value: null, isRequired: true, disable: false, error: null, validator: 'number' },
     quantity: { value: null, isRequired: true, disable: false, error: null, validator: 'number' },
     description: { value: '', isRequired: true, disable: false, error: null, validator: 'text' },
-    categoryId: { value: {} as categoryListDto, isRequired: true, disable: false, error: null, validator: 'object' },
-    brandId: { value: {} as BrandListDto, isRequired: true, disable: false, error: null, validator: 'object' }
   }
   const INITIAL_ROW_EDIT_STATE: ProductUpdateStateDto = {
     id: { value: -1, isRequired: true, disable: false, error: null, validator: 'number' },
@@ -31,8 +29,6 @@ const Products = () => {
     price: { value: null, isRequired: true, disable: false, error: null, validator: 'number' },
     quantity: { value: null, isRequired: true, disable: false, error: null, validator: 'number' },
     description: { value: '', isRequired: true, disable: false, error: null, validator: 'text' },
-    categoryId: { value: {} as categoryListDto, isRequired: true, disable: false, error: null, validator: 'object' },
-    brandId: { value: {} as BrandListDto, isRequired: true, disable: false, error: null, validator: 'object' },
   }
 
   const dispatch = useDispatch()
@@ -43,8 +39,6 @@ const Products = () => {
 
   const user: SignInUserDetailDto = useSelector((state: any) => state.login.signInUser.data)
   const productList: productListDto[] = useSelector((state: any) => state.products.productList.data)
-  const categoryList: categoryListDto[] = useSelector((state: any) => state.category.categoryList.data)
-  const brandList: BrandListDto[] = useSelector((state: any) => state.brand.brandList.data)
   const addProductAlert: AlertDto = useSelector((state: any) => state.alert.addProductAlert)
   const editProductAlert: AlertDto = useSelector((state: any) => state.alert.editProductAlert)
   const addProductLoader: boolean = useSelector((state: any) => state.products.addProduct.isLoading)
@@ -52,7 +46,6 @@ const Products = () => {
 
 
   useEffect(() => {
-    getDropDownList()
     getProductList()
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
@@ -67,10 +60,6 @@ const Products = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [addProductAlert, editProductAlert])
 
-  const getDropDownList = () => {
-    dispatch(CategoryActions.getCategoryList())
-    dispatch(brandActions.getBrandList())
-  }
   const getProductList = () => {
     dispatch(productActions.getProductList())
   }
@@ -102,24 +91,6 @@ const Products = () => {
         ...editFormRowData.price,
         value: p.price
       },
-      brandId: {
-        ...editFormRowData.brandId,
-        disable: true,
-        value: {
-          ...editFormRowData.brandId.value,
-          id: p.brandId,
-          name: p.brand
-        }
-      },
-      categoryId: {
-        ...editFormRowData.categoryId,
-        disable: true,
-        value: {
-          ...editFormRowData.categoryId.value,
-          id: p.categoryId,
-          name: p.category
-        }
-      }
     })
   }
 
@@ -133,8 +104,6 @@ const Products = () => {
         price: editFormRowData.price.value,
         quantity: editFormRowData.quantity.value,
         description: editFormRowData.description.value,
-        categoryId: editFormRowData.categoryId.value.id,
-        brandId: editFormRowData.brandId.value.id,
         userId: 1
       }
       dispatch(productActions.editProduct(payload))
@@ -151,8 +120,6 @@ const Products = () => {
         price: formValues.price.value,
         quantity: formValues.quantity.value,
         description: formValues.description.value,
-        categoryId: formValues.categoryId.value.id,
-        brandId: formValues.brandId.value.id,
         userId: 1
       }
       dispatch(productActions.addProduct(payload))
@@ -210,8 +177,6 @@ const Products = () => {
       <AppLayout componentTitle='House Details' breadcrumb='Dashboard'>
         <br />
         <AddProduct
-          categoryList={categoryList || []}
-          brandList={brandList || []}
           isExpanded={isAddProductExpanded}
           setIsExpanded={setIsAddProductExpanded}
           onInputHandleChange={onInputHandleChange}
