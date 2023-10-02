@@ -1,5 +1,4 @@
 export { default as AppLayout } from './template/AppLayout/AppLayout'
-export { default as AddBrands } from './brandManagement/AddBrands/AddBrands'
-export { default as ViewBrands } from './brandManagement/ViewBrands/ViewBrands'
+
 export { default as SignupForm } from './registration/SignupForm/SignupForm'
 export { default as LoginForm } from './login/LoginForm/LoginForm'

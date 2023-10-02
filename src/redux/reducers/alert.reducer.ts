@@ -1,4 +1,4 @@
-import { BRAND_ACTION_TYPES, CATEGORY_ACTION_TYPES, COMMON_ACTION_TYPES, LOGIN_ACTION_TYPES, PRODUCT_ACTION_TYPES, REGISTRATION_ACTION_TYPES } from "../../utilities/constants";
+import {CATEGORY_ACTION_TYPES, COMMON_ACTION_TYPES, LOGIN_ACTION_TYPES, PRODUCT_ACTION_TYPES, REGISTRATION_ACTION_TYPES } from "../../utilities/constants";
 import { AlertActionDto } from '../../utilities/models/alert.model'
 
 const INITIAL_STATE = {
@@ -81,46 +81,6 @@ const alertReducer = (state = INITIAL_STATE, action: AlertActionDto) => {
             return {
                 ...state,
                 editCategoryAlert: {
-                    message: null,
-                    severity: null,
-                    display: false
-
-                }
-            }
-        case BRAND_ACTION_TYPES.POST_BRAND + COMMON_ACTION_TYPES.SET_ALERT:
-            return {
-                ...state,
-                addBrandAlert: {
-                    ...state.addBrandAlert,
-                    message: action.message,
-                    severity: action.severity,
-                    display: true
-                }
-            }
-        case BRAND_ACTION_TYPES.POST_BRAND + COMMON_ACTION_TYPES.CLEAR_ALERT:
-            return {
-                ...state,
-                addBrandAlert: {
-                    message: null,
-                    severity: null,
-                    display: false
-
-                }
-            }
-        case BRAND_ACTION_TYPES.UPDATE_BRAND + COMMON_ACTION_TYPES.SET_ALERT:
-            return {
-                ...state,
-                editBrandAlert: {
-                    ...state.editBrandAlert,
-                    message: action.message,
-                    severity: action.severity,
-                    display: true
-                }
-            }
-        case BRAND_ACTION_TYPES.UPDATE_BRAND + COMMON_ACTION_TYPES.CLEAR_ALERT:
-            return {
-                ...state,
-                editBrandAlert: {
                     message: null,
                     severity: null,
                     display: false

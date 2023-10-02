@@ -1,7 +1,7 @@
 import { Accordion, AccordionDetails, AccordionSummary, Autocomplete, Button, CircularProgress, Divider, Grid, TextField } from '@mui/material'
 import React from 'react'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
-import { BrandListDto, ProductUpdateStateDto, categoryListDto } from '../../../utilities/models'
+import {ProductUpdateStateDto } from '../../../utilities/models'
 
 const AddProduct: React.FC<{
   isExpanded: boolean
@@ -14,8 +14,6 @@ const AddProduct: React.FC<{
   editProduct(): void
   formData: any
   editFormRowData: ProductUpdateStateDto
-  categoryList: Array<categoryListDto>
-  brandList: Array<BrandListDto>
 }> = (props) => {
 
   return (
