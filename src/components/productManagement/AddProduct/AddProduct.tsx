@@ -41,11 +41,11 @@ const AddProduct: React.FC<{
               id="outlined-basic"
               label="Location"
               variant="outlined"
-              value={!props.isEditProduct ? props.formData.name.value : props.editFormRowData.name.value}
-              error={!!props.formData.name.error}
+              value={!props.isEditProduct ? props.formData.Location.value : props.editFormRowData.Location.value}
+              error={!!props.formData.Location.error}
               helperText={
-                props.formData.name.error
-                  ? props.formData.name.error
+                props.formData.Location.error
+                  ? props.formData.Location.error
                   : null
               }
               style={{ width: '100%' }}
@@ -63,18 +63,18 @@ const AddProduct: React.FC<{
               id="outlined-basic"
               label="Bath Rooms"
               variant="outlined"
-              value={!props.isEditProduct ? props.formData.price.value : props.editFormRowData.price.value}
-              error={!!props.formData.price.error}
+              value={!props.isEditProduct ? props.formData.NoOfBathRooms.value : props.editFormRowData.NoOfBathRooms.value}
+              error={!!props.formData.NoOfBathRooms.error}
               helperText={
-                props.formData.price.error
-                  ? props.formData.price.error
+                props.formData.NoOfBathRooms.error
+                  ? props.formData.NoOfBathRooms.error
                   : null
               }
               style={{ width: '100%' }}
               inputProps={{ style: { fontSize: 13 } }}
               InputLabelProps={{ style: { fontSize: 13 } }}
               onChange={(e) =>
-                props.onInputHandleChange('Bathrooms', e.target.value)
+                props.onInputHandleChange('NoOfBedRooms', e.target.value)
               }
             />
           </Grid>
@@ -85,18 +85,18 @@ const AddProduct: React.FC<{
               id="outlined-basic"
               label="Bed Rooms"
               variant="outlined"
-              value={!props.isEditProduct ? props.formData.quantity.value : props.editFormRowData.quantity.value}
-              error={!!props.formData.quantity.error}
+              value={!props.isEditProduct ? props.formData.NoOfBedRooms.value : props.editFormRowData.NoOfBedRooms.value}
+              error={!!props.formData.NoOfBedRooms.error}
               helperText={
-                props.formData.quantity.error
-                  ? props.formData.quantity.error
+                props.formData.NoOfBedRooms.error
+                  ? props.formData.NoOfBedRooms.error
                   : null
               }
               style={{ width: '100%' }}
               inputProps={{ style: { fontSize: 13 } }}
               InputLabelProps={{ style: { fontSize: 13 } }}
               onChange={(e) =>
-                props.onInputHandleChange('BedRooms', e.target.value)
+                props.onInputHandleChange('NoOfBathRooms', e.target.value)
               }
             />
           </Grid>
@@ -107,11 +107,11 @@ const AddProduct: React.FC<{
               id="outlined-basic"
               label="LivingArea(sqft)"
               variant="outlined"
-              value={!props.isEditProduct ? props.formData.name.value : props.editFormRowData.name.value}
-              error={!!props.formData.name.error}
+              value={!props.isEditProduct ? props.formData.LivingArea.value : props.editFormRowData.NoOfBedRooms.value}
+              error={!!props.formData.LivingArea.error}
               helperText={
-                props.formData.name.error
-                  ? props.formData.name.error
+                props.formData.LivingArea.error
+                  ? props.formData.LivingArea.error
                   : null
               }
               style={{ width: '100%' }}
@@ -129,11 +129,11 @@ const AddProduct: React.FC<{
               id="outlined-basic"
               label="LandArea(perch)"
               variant="outlined"
-              value={!props.isEditProduct ? props.formData.price.value : props.editFormRowData.price.value}
-              error={!!props.formData.price.error}
+              value={!props.isEditProduct ? props.formData.LandArea.value : props.editFormRowData.LandArea.value}
+              error={!!props.formData.LandArea.error}
               helperText={
-                props.formData.price.error
-                  ? props.formData.price.error
+                props.formData.LandArea.error
+                  ? props.formData.LandArea.error
                   : null
               }
               style={{ width: '100%' }}
@@ -151,18 +151,18 @@ const AddProduct: React.FC<{
               id="outlined-basic"
               label="Floors"
               variant="outlined"
-              value={!props.isEditProduct ? props.formData.quantity.value : props.editFormRowData.quantity.value}
-              error={!!props.formData.quantity.error}
+              value={!props.isEditProduct ? props.formData.floors.value : props.editFormRowData.floors.value}
+              error={!!props.formData.floors.error}
               helperText={
-                props.formData.quantity.error
-                  ? props.formData.quantity.error
+                props.formData.floors.error
+                  ? props.formData.floors.error
                   : null
               }
               style={{ width: '100%' }}
               inputProps={{ style: { fontSize: 13 } }}
               InputLabelProps={{ style: { fontSize: 13 } }}
               onChange={(e) =>
-                props.onInputHandleChange('Floors', e.target.value)
+                props.onInputHandleChange('floors', e.target.value)
               }
             />
           </Grid>
@@ -173,18 +173,18 @@ const AddProduct: React.FC<{
               id="outlined-basic"
               label="School"
               variant="outlined"
-              value={!props.isEditProduct ? props.formData.name.value : props.editFormRowData.name.value}
-              error={!!props.formData.name.error}
+              value={!props.isEditProduct ? props.formData.School.value : props.editFormRowData.School.value}
+              error={!!props.formData.School.error}
               helperText={
-                props.formData.name.error
-                  ? props.formData.name.error
+                props.formData.School.error
+                  ? props.formData.School.error
                   : null
               }
               style={{ width: '100%' }}
               inputProps={{ style: { fontSize: 13 } }}
               InputLabelProps={{ style: { fontSize: 13 } }}
               onChange={(e) =>
-                props.onInputHandleChange('school', e.target.value)
+                props.onInputHandleChange('School', e.target.value)
               }
             />
           </Grid>
@@ -195,18 +195,18 @@ const AddProduct: React.FC<{
               id="outlined-basic"
               label="Shopping-Mall"
               variant="outlined"
-              value={!props.isEditProduct ? props.formData.price.value : props.editFormRowData.price.value}
-              error={!!props.formData.price.error}
+              value={!props.isEditProduct ? props.formData.ShappingMall.value : props.editFormRowData.ShappingMall.value}
+              error={!!props.formData.ShappingMall.error}
               helperText={
-                props.formData.price.error
-                  ? props.formData.price.error
+                props.formData.ShappingMall.error
+                  ? props.formData.ShappingMall.error
                   : null
               }
               style={{ width: '100%' }}
               inputProps={{ style: { fontSize: 13 } }}
               InputLabelProps={{ style: { fontSize: 13 } }}
               onChange={(e) =>
-                props.onInputHandleChange('shopping', e.target.value)
+                props.onInputHandleChange('ShappingMall', e.target.value)
               }
             />
           </Grid>
@@ -217,18 +217,18 @@ const AddProduct: React.FC<{
               id="outlined-basic"
               label="Transport"
               variant="outlined"
-              value={!props.isEditProduct ? props.formData.quantity.value : props.editFormRowData.quantity.value}
-              error={!!props.formData.quantity.error}
+              value={!props.isEditProduct ? props.formData.Transport.value : props.editFormRowData.Transport.value}
+              error={!!props.formData.Transport.error}
               helperText={
-                props.formData.quantity.error
-                  ? props.formData.quantity.error
+                props.formData.Transport.error
+                  ? props.formData.Transport.error
                   : null
               }
               style={{ width: '100%' }}
               inputProps={{ style: { fontSize: 13 } }}
               InputLabelProps={{ style: { fontSize: 13 } }}
               onChange={(e) =>
-                props.onInputHandleChange('transport', e.target.value)
+                props.onInputHandleChange('Transport', e.target.value)
               }
             />
           </Grid>
@@ -239,18 +239,18 @@ const AddProduct: React.FC<{
               id="outlined-basic"
               label="Date"
               variant="outlined"
-              value={!props.isEditProduct ? props.formData.name.value : props.editFormRowData.name.value}
-              error={!!props.formData.name.error}
+              value={!props.isEditProduct ? props.formData.Date.value : props.editFormRowData.Date.value}
+              error={!!props.formData.Date.error}
               helperText={
-                props.formData.name.error
-                  ? props.formData.name.error
+                props.formData.Date.error
+                  ? props.formData.Date.error
                   : null
               }
               style={{ width: '100%' }}
               inputProps={{ style: { fontSize: 13 } }}
               InputLabelProps={{ style: { fontSize: 13 } }}
               onChange={(e) =>
-                props.onInputHandleChange('date', e.target.value)
+                props.onInputHandleChange('Date', e.target.value)
               }
             />
           </Grid>
@@ -261,11 +261,11 @@ const AddProduct: React.FC<{
               id="outlined-basic"
               label="CurrencyRate"
               variant="outlined"
-              value={!props.isEditProduct ? props.formData.price.value : props.editFormRowData.price.value}
-              error={!!props.formData.price.error}
+              value={!props.isEditProduct ? props.formData.CurrencyRate.value : props.editFormRowData.CurrencyRate.value}
+              error={!!props.formData.CurrencyRate.error}
               helperText={
-                props.formData.price.error
-                  ? props.formData.price.error
+                props.formData.CurrencyRate.error
+                  ? props.formData.CurrencyRate.error
                   : null
               }
               style={{ width: '100%' }}
@@ -283,11 +283,11 @@ const AddProduct: React.FC<{
               id="outlined-basic"
               label="Price"
               variant="outlined"
-              value={!props.isEditProduct ? props.formData.quantity.value : props.editFormRowData.quantity.value}
-              error={!!props.formData.quantity.error}
+              value={!props.isEditProduct ? props.formData.Price.value : props.editFormRowData.Price.value}
+              error={!!props.formData.Price.error}
               helperText={
-                props.formData.quantity.error
-                  ? props.formData.quantity.error
+                props.formData.Price.error
+                  ? props.formData.Price.error
                   : null
               }
               style={{ width: '100%' }}
@@ -306,18 +306,18 @@ const AddProduct: React.FC<{
               id="outlined-basic"
               label="Reference"
               variant="outlined"
-              value={!props.isEditProduct ? props.formData.description.value : props.editFormRowData.description.value}
-              error={!!props.formData.description.error}
+              value={!props.isEditProduct ? props.formData.Link.value : props.editFormRowData.Link.value}
+              error={!!props.formData.Link.error}
               helperText={
-                props.formData.description.error
-                  ? props.formData.description.error
+                props.formData.Link.error
+                  ? props.formData.Link.error
                   : null
               }
               style={{ width: '100%' }}
               inputProps={{ style: { fontSize: 13 } }}
               InputLabelProps={{ style: { fontSize: 13 } }}
               onChange={(e) =>
-                props.onInputHandleChange('Reference', e.target.value)
+                props.onInputHandleChange('Link', e.target.value)
               }
             />
           </Grid>

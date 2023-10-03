@@ -3,7 +3,7 @@ import { ProductEditDto, ProductInfoDto, productListDto } from "../utilities/mod
 import { axiosPrivateInstance } from "."
 
 const addProduct = async (payload: ProductInfoDto) => {
-    return axiosPrivateInstance.post('/api/Product', payload)
+    return axiosPrivateInstance.post('/api/House/NewHouseDetails', payload)
 }
 
 const editProduct = async (payload: ProductEditDto) => {
@@ -12,7 +12,7 @@ const editProduct = async (payload: ProductEditDto) => {
 
 const getProductList = (): Promise<AxiosResponse<productListDto[]>> => {
     console.log("service")
-    return axiosPrivateInstance.get('/api/Product')
+    return axiosPrivateInstance.get('/api/NewHouseDetails')
 }
 
 export const productService = {
