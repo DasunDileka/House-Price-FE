@@ -8,6 +8,7 @@ import MuiAlert, { AlertProps } from '@mui/material/Alert'
 import { validateFormData } from '../../utilities/helpers';
 import { Snackbar } from '@mui/material';
 import { productActions } from '../../redux/actions';
+import { CleaningServices } from '@mui/icons-material';
 
 const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
   props,
@@ -18,35 +19,35 @@ const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
 
 const Product = () => {
   const INITIAL_STATE: ProductInitialStateDto = {
-    Location: { value: '', isRequired: true, disable: false, error: null, validator: 'text' },
-    NoOfBedRooms: { value: null, isRequired: true, disable: false, error: null, validator: 'number' },
-    NoOfBathRooms: { value: null, isRequired: true, disable: false, error: null, validator: 'number' },
-    LivingArea: { value: null, isRequired: true, disable: false, error: null, validator: 'number' },
-    LandArea: { value: null, isRequired: true, disable: false, error: null, validator: 'number' },
+    location: { value: '', isRequired: true, disable: false, error: null, validator: 'text' },
+    noOfBedRooms: { value: null, isRequired: true, disable: false, error: null, validator: 'number' },
+    noOfBathRooms: { value: null, isRequired: true, disable: false, error: null, validator: 'number' },
+    livingArea: { value: null, isRequired: true, disable: false, error: null, validator: 'number' },
+    landArea: { value: null, isRequired: true, disable: false, error: null, validator: 'number' },
     floors: { value: null, isRequired: true, disable: false, error: null, validator: 'number' },
-    School: { value: null, isRequired: true, disable: false, error: null, validator: 'number' },
-    ShappingMall: { value: null, isRequired: true, disable: false, error: null, validator: 'number' },
-    Transport: { value: null, isRequired: true, disable: false, error: null, validator: 'number' },
-    Date: { value: '', isRequired: true, disable: false, error: null, validator: 'text' },
-    CurrencyRate: { value: null, isRequired: true, disable: false, error: null, validator: 'number' },
-    Price: { value: null, isRequired: true, disable: false, error: null, validator: 'number' },
-    Link: { value: '', isRequired: true, disable: false, error: null, validator: 'text' },
+    school: { value: null, isRequired: true, disable: false, error: null, validator: 'number' },
+    shappingMall: { value: null, isRequired: true, disable: false, error: null, validator: 'number' },
+    transport: { value: null, isRequired: true, disable: false, error: null, validator: 'number' },
+    date: { value: '', isRequired: true, disable: false, error: null, validator: 'text' },
+    currencyRate: { value: null, isRequired: true, disable: false, error: null, validator: 'number' },
+    price: { value: null, isRequired: true, disable: false, error: null, validator: 'number' },
+    link: { value: '', isRequired: true, disable: false, error: null, validator: 'text' },
   }
   const INITIAL_ROW_EDIT_STATE: ProductUpdateStateDto = {
     id: { value: -1, isRequired: true, disable: false, error: null, validator: 'number' },
-    Location: { value: '', isRequired: true, disable: false, error: null, validator: 'text' },
-    NoOfBedRooms: { value: null, isRequired: true, disable: false, error: null, validator: 'number' },
-    NoOfBathRooms: { value: null, isRequired: true, disable: false, error: null, validator: 'number' },
-    LivingArea: { value: null, isRequired: true, disable: false, error: null, validator: 'number' },
-    LandArea: { value: null, isRequired: true, disable: false, error: null, validator: 'number' },
+    location: { value: '', isRequired: true, disable: false, error: null, validator: 'text' },
+    noOfBedRooms: { value: null, isRequired: true, disable: false, error: null, validator: 'number' },
+    noOfBathRooms: { value: null, isRequired: true, disable: false, error: null, validator: 'number' },
+    livingArea: { value: null, isRequired: true, disable: false, error: null, validator: 'number' },
+    landArea: { value: null, isRequired: true, disable: false, error: null, validator: 'number' },
     floors: { value: null, isRequired: true, disable: false, error: null, validator: 'number' },
-    School: { value: null, isRequired: true, disable: false, error: null, validator: 'number' },
-    ShappingMall: { value: null, isRequired: true, disable: false, error: null, validator: 'number' },
-    Transport: { value: null, isRequired: true, disable: false, error: null, validator: 'number' },
-    Date: { value: '', isRequired: true, disable: false, error: null, validator: 'text' },
-    CurrencyRate: { value: null, isRequired: true, disable: false, error: null, validator: 'number' },
-    Price: { value: null, isRequired: true, disable: false, error: null, validator: 'number' },
-    Link: { value: '', isRequired: true, disable: false, error: null, validator: 'text' },
+    school: { value: null, isRequired: true, disable: false, error: null, validator: 'number' },
+    shappingMall: { value: null, isRequired: true, disable: false, error: null, validator: 'number' },
+    transport: { value: null, isRequired: true, disable: false, error: null, validator: 'number' },
+    date: { value: '', isRequired: true, disable: false, error: null, validator: 'text' },
+    currencyRate: { value: null, isRequired: true, disable: false, error: null, validator: 'number' },
+    price: { value: null, isRequired: true, disable: false, error: null, validator: 'number' },
+    link: { value: '', isRequired: true, disable: false, error: null, validator: 'text' },
   }
 
   const dispatch = useDispatch()
@@ -93,56 +94,56 @@ const Product = () => {
         ...editFormRowData.id,
         value: p.id
       },
-      Location: {
-        ...editFormRowData.Location,
-        value: p.Location
+      location: {
+        ...editFormRowData.location,
+        value: p.location
       },
-      NoOfBedRooms: {
-        ...editFormRowData.NoOfBedRooms,
-        value: p.NoOfBedRooms
+      noOfBedRooms: {
+        ...editFormRowData.noOfBedRooms,
+        value: p.noOfBedRooms
       },
-      NoOfBathRooms: {
-        ...editFormRowData.NoOfBathRooms,
-        value: p.NoOfBathRooms
+      noOfBathRooms: {
+        ...editFormRowData.noOfBathRooms,
+        value: p.noOfBathRooms
       },
-      LivingArea: {
-        ...editFormRowData.LivingArea,
-        value: p.LivingArea
+      livingArea: {
+        ...editFormRowData.livingArea,
+        value: p.livingArea
       },
-      LandArea: {
-        ...editFormRowData.LandArea,
-        value: p.LandArea
+      landArea: {
+        ...editFormRowData.landArea,
+        value: p.landArea
       },
       floors: {
         ...editFormRowData.floors,
         value: p.floors
       },
-      School: {
-        ...editFormRowData.School,
-        value: p.School
+      school: {
+        ...editFormRowData.school,
+        value: p.school
       },
-      ShappingMall: {
-        ...editFormRowData.ShappingMall,
-        value: p.ShappingMall
+      shappingMall: {
+        ...editFormRowData.shappingMall,
+        value: p.shappingMall
       },
-      Transport: {
-        ...editFormRowData.Transport,
-        value: p.Transport
-      }, Date: {
-        ...editFormRowData.Date,
-        value: p.Date
+      transport: {
+        ...editFormRowData.transport,
+        value: p.transport
+      }, date: {
+        ...editFormRowData.date,
+        value: p.date
       },
-      CurrencyRate: {
-        ...editFormRowData.CurrencyRate,
-        value: p.CurrencyRate
+      currencyRate: {
+        ...editFormRowData.currencyRate,
+        value: p.currencyRate
       },
-      Price: {
-        ...editFormRowData.Price,
-        value: p.Price
+      price: {
+        ...editFormRowData.price,
+        value: p.price
       },
-      Link: {
-        ...editFormRowData.Link,
-        value: p.Link
+      link: {
+        ...editFormRowData.link,
+        value: p.link
       }
     })
   }
@@ -153,19 +154,19 @@ const Product = () => {
     if (isValid) {
       const payload: ProductEditDto = {
         id: editFormRowData.id.value,
-        Location: editFormRowData.Location.value,
-        NoOfBedRooms: editFormRowData.NoOfBedRooms.value,
-        NoOfBathRooms: editFormRowData.NoOfBathRooms.value,
-        LivingArea: editFormRowData.LivingArea.value,
-        LandArea: editFormRowData.LandArea.value,
+        location: editFormRowData.location.value,
+        noOfBedRooms: editFormRowData.noOfBedRooms.value,
+        noOfBathRooms: editFormRowData.noOfBathRooms.value,
+        livingArea: editFormRowData.livingArea.value,
+        landArea: editFormRowData.landArea.value,
         floors: editFormRowData.floors.value,
-        School: editFormRowData.School.value,
-        ShappingMall: editFormRowData.ShappingMall.value,
-        Transport: editFormRowData.Transport.value,
-        Date: editFormRowData.Date.value,
-        CurrencyRate: editFormRowData.CurrencyRate.value,
-        Price: editFormRowData.Price.value,
-        Link: editFormRowData.Link.value,
+        school: editFormRowData.school.value,
+        shappingMall: editFormRowData.shappingMall.value,
+        transport: editFormRowData.transport.value,
+        date: editFormRowData.date.value,
+        currencyRate: editFormRowData.currencyRate.value,
+        price: editFormRowData.price.value,
+        link: editFormRowData.link.value,
       }
       dispatch(productActions.editProduct(payload))
     }
@@ -178,19 +179,19 @@ const Product = () => {
     if (isValid) {
       const payload: ProductInfoDto = {
         
-        Location: formValues.Location.value,
-        NoOfBedRooms: formValues.NoOfBedRooms.value,
-        NoOfBathRooms: formValues.NoOfBathRooms.value,
-        LivingArea: formValues.LivingArea.value,
-        LandArea: formValues.LandArea.value,
+        location: formValues.location.value,
+        noOfBedRooms: formValues.noOfBedRooms.value,
+        noOfBathRooms: formValues.noOfBathRooms.value,
+        livingArea: formValues.livingArea.value,
+        landArea: formValues.landArea.value,
         floors: formValues.floors.value,
-        School: formValues.School.value,
-        ShappingMall: formValues.ShappingMall.value,
-        Transport: formValues.Transport.value,
-        Date: formValues.Date.value,
-        CurrencyRate: formValues.CurrencyRate.value,
-        Price: formValues.Price.value,
-        Link: formValues.Link.value,
+        school: formValues.school.value,
+        shappingMall: formValues.shappingMall.value,
+        transport: formValues.transport.value,
+        date: formValues.date.value,
+        currencyRate: formValues.currencyRate.value,
+        price: formValues.price.value,
+        link: formValues.link.value,
   
       }
       dispatch(productActions.addProduct(payload))

@@ -16,16 +16,23 @@ const ViewProduct: React.FC<{
           <h2>House Details</h2>
         </Grid>
       </Grid>
-      {/* <Table sx={{ marginTop: '20px' }}>
+      { <Table sx={{ marginTop: '20px' }}>
         <TableHead>
           <TableRow>
             <StyledTableCell></StyledTableCell>
-            <StyledTableCell>Product Name</StyledTableCell>
-            <StyledTableCell>Description</StyledTableCell>
+            <StyledTableCell>Location</StyledTableCell>
+            <StyledTableCell>No Of BedRooms</StyledTableCell>
+            <StyledTableCell>No Of BathRooms</StyledTableCell>
+            <StyledTableCell>LivingArea</StyledTableCell>
+            <StyledTableCell>LandArea</StyledTableCell>
+            <StyledTableCell>floors</StyledTableCell>
+            <StyledTableCell>School</StyledTableCell>
+            <StyledTableCell>ShappingMall</StyledTableCell>
+            <StyledTableCell>Transport</StyledTableCell>
+            <StyledTableCell>Date</StyledTableCell>
+            <StyledTableCell>CurrencyRate</StyledTableCell>
             <StyledTableCell>Price</StyledTableCell>
-            <StyledTableCell>Quantity</StyledTableCell>
-            <StyledTableCell>Category</StyledTableCell>
-            <StyledTableCell>Brand</StyledTableCell>
+            <StyledTableCell>Link</StyledTableCell>
             <StyledTableCell style={{ paddingBottom: 0, paddingTop: 0, padding: 0, position: 'sticky', right: 0 }}>Actions</StyledTableCell>
           </TableRow>
         </TableHead>
@@ -33,12 +40,19 @@ const ViewProduct: React.FC<{
           {props.productList.map((item: productListDto) => (
             <TableRow>
               <StyledTableCell></StyledTableCell>
-              <StyledTableCell>{item.name}</StyledTableCell>
-              <StyledTableCell>{item.description}</StyledTableCell>
+              <StyledTableCell>{item.location}</StyledTableCell>
+              <StyledTableCell>{item.noOfBedRooms}</StyledTableCell>
+              <StyledTableCell>{item.noOfBathRooms}</StyledTableCell>
+              <StyledTableCell>{item.livingArea}</StyledTableCell>
+              <StyledTableCell>{item.landArea}</StyledTableCell>
+              <StyledTableCell>{item.floors}</StyledTableCell>
+              <StyledTableCell>{item.school}</StyledTableCell>
+              <StyledTableCell>{item.shappingMall}</StyledTableCell>
+              <StyledTableCell>{item.transport}</StyledTableCell>
+              <StyledTableCell>{item.date}</StyledTableCell>
+              <StyledTableCell>{item.currencyRate}</StyledTableCell>
               <StyledTableCell>{item.price}</StyledTableCell>
-              <StyledTableCell>{item.quantity}</StyledTableCell>
-              <StyledTableCell>{item.category}</StyledTableCell>
-              <StyledTableCell>{item.brand}</StyledTableCell>
+              <StyledTableCell>{item.link}</StyledTableCell>
               <StyledTableCell style={{ paddingBottom: 0, paddingTop: 0, padding: 0, position: 'sticky', right: 0 }}>
                 <Box>
                   <IconButton size='small'
@@ -53,7 +67,7 @@ const ViewProduct: React.FC<{
             </TableRow>
           ))}
         </TableBody>
-      </Table> */}
+      </Table> }
     </>
   )
 }

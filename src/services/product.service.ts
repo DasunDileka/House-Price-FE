@@ -7,12 +7,12 @@ const addProduct = async (payload: ProductInfoDto) => {
 }
 
 const editProduct = async (payload: ProductEditDto) => {
-    return axiosPrivateInstance.put(`/api/Product/${payload.id}`, payload)
+    return axiosPrivateInstance.put(`/api/House/updateHouseDetails?Id=${payload.id}`, payload)
 }
 
 const getProductList = (): Promise<AxiosResponse<productListDto[]>> => {
     console.log("service")
-    return axiosPrivateInstance.get('/api/NewHouseDetails')
+    return axiosPrivateInstance.get('/api/House/GetHouseDetails')
 }
 
 export const productService = {
