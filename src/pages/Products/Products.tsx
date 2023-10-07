@@ -8,6 +8,7 @@ import MuiAlert, { AlertProps } from '@mui/material/Alert'
 import { validateFormData } from '../../utilities/helpers';
 import { Snackbar } from '@mui/material';
 import { productActions } from '../../redux/actions';
+import { CleaningServices } from '@mui/icons-material';
 
 const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
   props,
@@ -16,19 +17,37 @@ const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />
 })
 
-const Products = () => {
+const Product = () => {
   const INITIAL_STATE: ProductInitialStateDto = {
-    name: { value: '', isRequired: true, disable: false, error: null, validator: 'text' },
+    location: { value: '', isRequired: true, disable: false, error: null, validator: 'text' },
+    noOfBedRooms: { value: null, isRequired: true, disable: false, error: null, validator: 'number' },
+    noOfBathRooms: { value: null, isRequired: true, disable: false, error: null, validator: 'number' },
+    livingArea: { value: null, isRequired: true, disable: false, error: null, validator: 'number' },
+    landArea: { value: null, isRequired: true, disable: false, error: null, validator: 'number' },
+    floors: { value: null, isRequired: true, disable: false, error: null, validator: 'number' },
+    school: { value: null, isRequired: true, disable: false, error: null, validator: 'number' },
+    shappingMall: { value: null, isRequired: true, disable: false, error: null, validator: 'number' },
+    transport: { value: null, isRequired: true, disable: false, error: null, validator: 'number' },
+    date: { value: '', isRequired: true, disable: false, error: null, validator: 'text' },
+    currencyRate: { value: null, isRequired: true, disable: false, error: null, validator: 'number' },
     price: { value: null, isRequired: true, disable: false, error: null, validator: 'number' },
-    quantity: { value: null, isRequired: true, disable: false, error: null, validator: 'number' },
-    description: { value: '', isRequired: true, disable: false, error: null, validator: 'text' },
+    link: { value: '', isRequired: true, disable: false, error: null, validator: 'text' },
   }
   const INITIAL_ROW_EDIT_STATE: ProductUpdateStateDto = {
     id: { value: -1, isRequired: true, disable: false, error: null, validator: 'number' },
-    name: { value: '', isRequired: true, disable: false, error: null, validator: 'text' },
+    location: { value: '', isRequired: true, disable: false, error: null, validator: 'text' },
+    noOfBedRooms: { value: null, isRequired: true, disable: false, error: null, validator: 'number' },
+    noOfBathRooms: { value: null, isRequired: true, disable: false, error: null, validator: 'number' },
+    livingArea: { value: null, isRequired: true, disable: false, error: null, validator: 'number' },
+    landArea: { value: null, isRequired: true, disable: false, error: null, validator: 'number' },
+    floors: { value: null, isRequired: true, disable: false, error: null, validator: 'number' },
+    school: { value: null, isRequired: true, disable: false, error: null, validator: 'number' },
+    shappingMall: { value: null, isRequired: true, disable: false, error: null, validator: 'number' },
+    transport: { value: null, isRequired: true, disable: false, error: null, validator: 'number' },
+    date: { value: '', isRequired: true, disable: false, error: null, validator: 'text' },
+    currencyRate: { value: null, isRequired: true, disable: false, error: null, validator: 'number' },
     price: { value: null, isRequired: true, disable: false, error: null, validator: 'number' },
-    quantity: { value: null, isRequired: true, disable: false, error: null, validator: 'number' },
-    description: { value: '', isRequired: true, disable: false, error: null, validator: 'text' },
+    link: { value: '', isRequired: true, disable: false, error: null, validator: 'text' },
   }
 
   const dispatch = useDispatch()
@@ -75,22 +94,57 @@ const Products = () => {
         ...editFormRowData.id,
         value: p.id
       },
-      name: {
-        ...editFormRowData.name,
-        value: p.name
+      location: {
+        ...editFormRowData.location,
+        value: p.location
       },
-      description: {
-        ...editFormRowData.description,
-        value: p.description
+      noOfBedRooms: {
+        ...editFormRowData.noOfBedRooms,
+        value: p.noOfBedRooms
       },
-      quantity: {
-        ...editFormRowData.quantity,
-        value: p.quantity
+      noOfBathRooms: {
+        ...editFormRowData.noOfBathRooms,
+        value: p.noOfBathRooms
+      },
+      livingArea: {
+        ...editFormRowData.livingArea,
+        value: p.livingArea
+      },
+      landArea: {
+        ...editFormRowData.landArea,
+        value: p.landArea
+      },
+      floors: {
+        ...editFormRowData.floors,
+        value: p.floors
+      },
+      school: {
+        ...editFormRowData.school,
+        value: p.school
+      },
+      shappingMall: {
+        ...editFormRowData.shappingMall,
+        value: p.shappingMall
+      },
+      transport: {
+        ...editFormRowData.transport,
+        value: p.transport
+      }, date: {
+        ...editFormRowData.date,
+        value: p.date
+      },
+      currencyRate: {
+        ...editFormRowData.currencyRate,
+        value: p.currencyRate
       },
       price: {
         ...editFormRowData.price,
         value: p.price
       },
+      link: {
+        ...editFormRowData.link,
+        value: p.link
+      }
     })
   }
 
@@ -100,11 +154,19 @@ const Products = () => {
     if (isValid) {
       const payload: ProductEditDto = {
         id: editFormRowData.id.value,
-        name: editFormRowData.name.value,
+        location: editFormRowData.location.value,
+        noOfBedRooms: editFormRowData.noOfBedRooms.value,
+        noOfBathRooms: editFormRowData.noOfBathRooms.value,
+        livingArea: editFormRowData.livingArea.value,
+        landArea: editFormRowData.landArea.value,
+        floors: editFormRowData.floors.value,
+        school: editFormRowData.school.value,
+        shappingMall: editFormRowData.shappingMall.value,
+        transport: editFormRowData.transport.value,
+        date: editFormRowData.date.value,
+        currencyRate: editFormRowData.currencyRate.value,
         price: editFormRowData.price.value,
-        quantity: editFormRowData.quantity.value,
-        description: editFormRowData.description.value,
-        userId: 1
+        link: editFormRowData.link.value,
       }
       dispatch(productActions.editProduct(payload))
     }
@@ -116,11 +178,21 @@ const Products = () => {
     setFormValues(validateData)
     if (isValid) {
       const payload: ProductInfoDto = {
-        name: formValues.name.value,
+        
+        location: formValues.location.value,
+        noOfBedRooms: formValues.noOfBedRooms.value,
+        noOfBathRooms: formValues.noOfBathRooms.value,
+        livingArea: formValues.livingArea.value,
+        landArea: formValues.landArea.value,
+        floors: formValues.floors.value,
+        school: formValues.school.value,
+        shappingMall: formValues.shappingMall.value,
+        transport: formValues.transport.value,
+        date: formValues.date.value,
+        currencyRate: formValues.currencyRate.value,
         price: formValues.price.value,
-        quantity: formValues.quantity.value,
-        description: formValues.description.value,
-        userId: 1
+        link: formValues.link.value,
+  
       }
       dispatch(productActions.addProduct(payload))
     }
@@ -198,4 +270,4 @@ const Products = () => {
   )
 }
 
-export default Products
+export default Product

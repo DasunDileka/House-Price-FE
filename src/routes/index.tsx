@@ -2,6 +2,10 @@ import React from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { APP_ROUTES } from '../utilities/constants'
 import {CustomerHome, Home, Login, Product, Register } from '../pages'
+import UserHome from '../pages/UserHome/Home'
+import About from '../pages/About/About'
+import Contact from '../pages/Contact.tsx/Contact'
+import PageNotFound from '../pages/NotFound/NotFound'
 
 const AppRoutes = () => {
   return (
@@ -12,6 +16,10 @@ const AppRoutes = () => {
             <Route path={APP_ROUTES.HOME} Component={Home} />
             <Route path={APP_ROUTES.HOUSE} Component={Product} />
             <Route path={APP_ROUTES.CUSTOMER_HOME} Component={CustomerHome} />
+            <Route path={APP_ROUTES.UserHome} Component={UserHome} />
+            <Route path={APP_ROUTES.About} Component={About} />
+            <Route path={APP_ROUTES.Conatct} Component={Contact} />
+            <Route path={APP_ROUTES.PageNotFound} Component={PageNotFound} />
         </Routes>
     </BrowserRouter>
   )

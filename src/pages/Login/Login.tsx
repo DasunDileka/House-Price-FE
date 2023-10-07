@@ -53,7 +53,8 @@ const Login = () => {
       const loggerUser: SignInUserDetailDto = loginResponse.data
       if (loggerUser) {
         if (loginResponse.data.userType === 'Customer') {
-          navigate(APP_ROUTES.CUSTOMER_HOME)
+          window.open("http://127.0.0.1:5000/", '_blank');
+        //  navigate(APP_ROUTES.CUSTOMER_HOME)
         } else {
           navigate(APP_ROUTES.HOME)
         }

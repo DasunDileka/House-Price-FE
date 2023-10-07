@@ -1,4 +1,4 @@
-import {CATEGORY_ACTION_TYPES, COMMON_ACTION_TYPES, LOGIN_ACTION_TYPES, PRODUCT_ACTION_TYPES, REGISTRATION_ACTION_TYPES } from "../../utilities/constants";
+import {COMMON_ACTION_TYPES, LOGIN_ACTION_TYPES, PRODUCT_ACTION_TYPES, REGISTRATION_ACTION_TYPES } from "../../utilities/constants";
 import { AlertActionDto } from '../../utilities/models/alert.model'
 
 const INITIAL_STATE = {
@@ -47,46 +47,7 @@ const INITIAL_STATE = {
 
 const alertReducer = (state = INITIAL_STATE, action: AlertActionDto) => {
     switch (action.type) {
-        case CATEGORY_ACTION_TYPES.POST_CATEGORY + COMMON_ACTION_TYPES.SET_ALERT:
-            return {
-                ...state,
-                addCategoryAlert: {
-                    ...state.addCategoryAlert,
-                    message: action.message,
-                    severity: action.severity,
-                    display: true
-                }
-            }
-        case CATEGORY_ACTION_TYPES.POST_CATEGORY + COMMON_ACTION_TYPES.CLEAR_ALERT:
-            return {
-                ...state,
-                addCategoryAlert: {
-                    message: null,
-                    severity: null,
-                    display: false
-
-                }
-            }
-        case CATEGORY_ACTION_TYPES.UPDATE_CATEGORY + COMMON_ACTION_TYPES.SET_ALERT:
-            return {
-                ...state,
-                editCategoryAlert: {
-                    ...state.editCategoryAlert,
-                    message: action.message,
-                    severity: action.severity,
-                    display: true
-                }
-            }
-        case CATEGORY_ACTION_TYPES.UPDATE_CATEGORY + COMMON_ACTION_TYPES.CLEAR_ALERT:
-            return {
-                ...state,
-                editCategoryAlert: {
-                    message: null,
-                    severity: null,
-                    display: false
-
-                }
-            }
+      
         case PRODUCT_ACTION_TYPES.POST_PRODUCT + COMMON_ACTION_TYPES.SET_ALERT:
             return {
                 ...state,
