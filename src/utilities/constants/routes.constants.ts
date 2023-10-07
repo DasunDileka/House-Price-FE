@@ -4,5 +4,11 @@ export enum APP_ROUTES {
   REGISTER = '/register',
   HOME = '/home',
   HOUSE = '/House',
-  CUSTOMER_HOME = '/customer-home'
+  CUSTOMER_HOME = '/customer-home',
+  UserHome='/userhome',
+  About='/about',
+  Conatct='/contact',
+  Menu='/menu',
+  PageNotFound='/notfound'
+ 
 }
