@@ -9,6 +9,8 @@ export enum APP_ROUTES {
   About='/about',
   Conatct='/contact',
   Menu='/menu',
-  PageNotFound='/notfound'
+  PageNotFound='/notfound',
+  Prediction='/prediction',
+  SignIn='/signIn'
  
 }

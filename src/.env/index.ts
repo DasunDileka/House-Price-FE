@@ -2,7 +2,8 @@ import {ENV_LOCAL} from "./environment.local"
 
 export interface ENV_VARIABLES {
     APP_ENV: string,
-    API_BASE: string
+    API_BASE: string,
+   // API_BASEP: string
 }
 
 // DEFAULT PROD ENV VARIABLES
