@@ -1,1 +1,1 @@
-export { default as acenturaLogo } from './acentura_logo.svg'
+export { default as acenturaLogo } from './MainImage.png'
