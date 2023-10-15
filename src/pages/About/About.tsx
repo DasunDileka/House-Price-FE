@@ -29,19 +29,21 @@ const About = () => {
           }}
       >
           <Typography variant="h4">Welcome To My Resturant</Typography>
-          <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat quod,
-              suscipit, aperiam totam autem culpa cum eveniet dolorum quasi est
-              perspiciatis laborum. 
-          
-          </p>
-          <br />
-          <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi,
-              deserunt libero reprehenderit cum sint fugit cumque temporibus modi
-              facere eveniet amet obcaecati ducimus harum velit maxime vel qui
-          
-          </p>
+          <h3>
+           
+           Welcome to our Website, your gateway to the world of real estate and the key to unlocking your dream home.
+            At Lanka-House, we are committed to making the process of buying and selling homes as seamless and enjoyable as possible.
+             With a team of dedicated professionals and a wealth of experience in the real estate industry, 
+           we're here to assist you every step of the way. 
+                     </h3>
+                     <br />
+                     <h3>
+                     Our mission is to provide you with a platform where you can explore an extensive range of property listings,
+                      receive expert guidance, and experience a customer-centric approach that prioritizes your satisfaction.
+                       Whether you're a first-time homebuyer, an experienced investor, or a seller looking to showcase your property,
+                      we're here to make your real estate journey a smooth and rewarding one.
+                     
+                     </h3>
       </Box>
       <Footer/>
       </>    

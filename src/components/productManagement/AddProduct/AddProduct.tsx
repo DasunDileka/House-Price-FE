@@ -237,7 +237,7 @@ const AddProduct: React.FC<{
               fullWidth
               size='small'
               id="outlined-basic"
-              label="Date"
+              label="Date(2023-10-18)"
               variant="outlined"
               value={!props.isEditProduct ? props.formData.date.value : props.editFormRowData.date.value}
               error={!!props.formData.date.error}

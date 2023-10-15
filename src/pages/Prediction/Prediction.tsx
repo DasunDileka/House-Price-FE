@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { APP_ROUTES } from '../../utilities/constants';
+import { APP_ACTION_STATUS, APP_ROUTES } from '../../utilities/constants';
 import { useNavigate } from 'react-router-dom'
 import { PredictionFormInitialStateDto,PredictionDto } from '../../utilities/models/prediction.model';
 import { AlertDto } from '../../utilities/models';
@@ -19,6 +19,7 @@ const Predictor = () => {
     numberOfFloors: { value: null, isRequired: true, disable: false, error: null, validator: 'number' },
     currencyRate: { value: null, isRequired: true, disable: false, error: null, validator: 'number' },
     location: { value: "", isRequired: true, disable: false, error: null, validator: 'text' },
+    prediction: { value: null, isRequired: false, disable: false, error: null, validator: 'number' },
   }
 
   const theme = createTheme();
@@ -26,6 +27,10 @@ const Predictor = () => {
   const dispatch = useDispatch()
   const [predictForm, setPredictForm] = React.useState(INITIAL_STATE)
 
+  const predictResponse = useSelector((state: any) => state.predict.predict)
+
+
+//const predictResponse = useSelector((state: any) => state.data.predict)
   // signupUserAlert: AlertDto = useSelector((state: any) => state.alert.signupUserAlert)
   // const signupUser: AlertDto = useSelector((state: any) => state.registration.signupUser)
 
@@ -37,6 +42,18 @@ const Predictor = () => {
    // }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   //}, [signupUserAlert])
+  React.useEffect(() => {
+    if(predictResponse.status ===  APP_ACTION_STATUS.SUCCESS){
+      console.log("predictResponce",predictResponse)
+      setPredictForm({
+        ...predictForm,
+        prediction: {
+          ...predictForm.prediction,
+          value: "LKR" + predictResponse.data
+        }
+      })
+   }
+   }, [predictResponse.status])
 
   const onValidateUser = async () => {
     // navigate(APP_ROUTES.HOME)

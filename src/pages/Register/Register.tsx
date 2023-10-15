@@ -23,7 +23,7 @@ const Register = () => {
       isRequired: true,
       error: null,
       disable: false,
-      validator: 'text'
+      validator: 'email'
     },
     password: {
       value: '',
@@ -53,7 +53,7 @@ const Register = () => {
     if (signupUserAlert.severity === 'success') {
       setSignupForm(INITIAL_STATE)
       alert("Registration Successful")
-      navigate(APP_ROUTES.ROOT)
+      navigate(APP_ROUTES.SignIn)
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [signupUserAlert])

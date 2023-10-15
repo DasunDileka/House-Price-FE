@@ -45,4 +45,5 @@ axiosPublicInstance.interceptors.response.use(async (response) => {
 export * from './registration.service'
 export * from './login.service'
 export * from './prediction.service'
+export * from './menu.service'
 

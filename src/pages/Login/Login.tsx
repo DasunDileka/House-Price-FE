@@ -25,7 +25,7 @@ const Login = () => {
       isRequired: true,
       error: null,
       disable: false,
-      validator: 'text'
+      validator: 'email'
     },
     password: {
       value: '',
@@ -53,10 +53,10 @@ const Login = () => {
       const loggerUser: SignInUserDetailDto = loginResponse.data
       if (loggerUser) {
         if (loginResponse.data.userType === 'Customer') {
-          window.open("http://127.0.0.1:5000/", '_blank');
+          window.open(APP_ROUTES.Prediction, '_blank');
         //  navigate(APP_ROUTES.CUSTOMER_HOME)
         } else {
-          navigate(APP_ROUTES.HOME)
+          navigate(APP_ROUTES.HOUSE)
         }
       }
     }
@@ -70,6 +70,17 @@ const Login = () => {
   const onNavigateToRegister = () => {
     navigate(APP_ROUTES.REGISTER)
   }
+
+  const handleInputFocus = (property: string, section: string) => {
+    if (section === "SI")
+      setSignInForm({
+        ...signInForm,
+        [property]: {
+          ...signInForm[property as keyof typeof signInForm],
+          error: null,
+        },
+      });
+ }
 
   const onInputHandleChange = (property: string, value: string) => {
     setSignInForm({
@@ -122,6 +133,7 @@ const Login = () => {
         onNavigateToRegister={onNavigateToRegister}
         onInputHandleChange={onInputHandleChange}
         signInForm={signInForm}
+        handleInputFocus={handleInputFocus}
       />
     </ThemeProvider>
   );

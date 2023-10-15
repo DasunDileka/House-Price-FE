@@ -33,6 +33,11 @@ const AppLayout: React.FC<{
                   <BadgeOutlined />
                   House Details
                 </NavLink>
+                <NavLink className={({ isActive }) => (isActive ? 'navLink is-active' : 'navLink')}
+                  to={APP_ROUTES.UserHome} >
+                  <BadgeOutlined />
+                  LogOut
+                </NavLink>
                 </div>
           </aside>
         </aside>
