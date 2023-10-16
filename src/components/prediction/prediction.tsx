@@ -25,7 +25,7 @@ const PredictionForm: React.FC<{
               margin="normal"
               required
               fullWidth
-              label="NumberOfBethrooms"
+              label="NumberOfBedrooms"
               name="numberOfBedrooms"
               autoFocus
               value={props.predict.numberOfBedrooms.value}
@@ -113,6 +113,18 @@ const PredictionForm: React.FC<{
             >
               Enter
             </Button>
+            <Grid item xs={12}>
+            <TextField
+              margin="normal"
+              required
+              fullWidth
+              label="Price"
+              name="price"
+              autoFocus
+              value={props.predict.prediction.value}
+            
+            />
+            </Grid>
           </Grid>
         
       </Container>

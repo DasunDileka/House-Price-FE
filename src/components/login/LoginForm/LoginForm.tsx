@@ -3,15 +3,19 @@ import React from 'react'
 import Link from '@mui/material/Link'
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import { SignInFormInitialStateDto } from '../../../utilities/models';
+import Footer from '../../UserPage/Footer';
+import Header from '../../UserPage/Header';
 
 const LoginForm: React.FC<{
     onNavigateToRegister(): void
     onValidateUser(): void
     signInForm: SignInFormInitialStateDto
+    handleInputFocus(property: string, section: string): void;
     onInputHandleChange(property: string, value: string): void
 }> = (props) => {
     return (
         <>
+        <Header/>
             <Container component="main" maxWidth="xs">
                 <CssBaseline />
                 <Box
@@ -35,7 +39,12 @@ const LoginForm: React.FC<{
                             fullWidth
                             label="Email"
                             name="emailID"
+                            error={!!props.signInForm.emailID.error}
                             autoFocus
+                            onFocus={() => props.handleInputFocus('emailID', 'SI')}
+                            helperText={props.signInForm.emailID.error
+                                ? props.signInForm.emailID.error
+                                : null}
                             value={props.signInForm.emailID.value}
                             onChange={(e) => props.onInputHandleChange('emailID', e.target.value)}
 
@@ -45,8 +54,13 @@ const LoginForm: React.FC<{
                             required
                             fullWidth
                             name="password"
+                            error={!!props.signInForm.password.error}
                             label="Password"
                             type="password"
+                            onFocus={() => props.handleInputFocus('password', 'SI')}
+                            helperText={props.signInForm.password.error
+                                ? props.signInForm.password.error
+                                : null}
                             value={props.signInForm.password.value}
                             onChange={(e) => props.onInputHandleChange('password', e.target.value)}
 

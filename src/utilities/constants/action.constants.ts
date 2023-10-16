@@ -15,6 +15,9 @@ export const LOGIN_ACTION_TYPES = {
 export const PREDICT_ACTION_TYPES ={
   PREDICT_VALUE : 'PREDICT_VALUE'
 }
+export const MENU_ACTION_TYPES ={
+  MENU_DATA : 'MENU_DATA'
+}
 
 export const COMMON_ACTION_TYPES = {
   REQUEST: '_REQUEST',

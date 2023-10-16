@@ -4,3 +4,6 @@ export { default as LoginForm } from './login/LoginForm/LoginForm'
 export { default as Header } from './UserPage/Header'
 export { default as Footer } from './UserPage/Footer'
 export { default as PredictionForm } from './prediction/prediction'
+export {MenuList} from './data/data'
+export {default as ViewMenu} from './menu/menu'
+ 

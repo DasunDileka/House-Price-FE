@@ -9,6 +9,7 @@ export interface PredictionFormInitialStateDto
     numberOfFloors: FormValidatorFeildDto<number | null>
     currencyRate: FormValidatorFeildDto<number | null>
     location: FormValidatorFeildDto<string>
+    prediction: FormValidatorFeildDto<string | null>
 }
 
 export interface PredictionDto {
@@ -19,4 +20,9 @@ export interface PredictionDto {
     NumberOfFloors: number | null
     CurrencyRate: number | null
     Locations: string
+}
+
+export interface PredictionResponse
+{
+    price : string
 }

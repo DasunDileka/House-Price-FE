@@ -1,9 +1,9 @@
 import { delay, put, call, takeEvery } from "redux-saga/effects"
 import { ALERT_CONFIGS, COMMON_ACTION_TYPES, PREDICT_ACTION_TYPES } from "../../utilities/constants"
-import { AlertActionDto, SignupUserDto } from "../../utilities/models"
+import { AlertActionDto, PredictionDto } from "../../utilities/models"
 import { predictioService } from "../../services"
 
-function* predictionValue(action: {type: string, payload: SignupUserDto}) {
+function* predictionValue(action: {type: string, payload: PredictionDto}) {
     try {
         // @ts-ignore
         const data = yield call(predictioService.predictCount, action.payload)
@@ -13,7 +13,7 @@ function* predictionValue(action: {type: string, payload: SignupUserDto}) {
           severity: 'success',
           type: PREDICT_ACTION_TYPES.PREDICT_VALUE + COMMON_ACTION_TYPES.SET_ALERT
         }
-        yield put({ type: PREDICT_ACTION_TYPES.PREDICT_VALUE + COMMON_ACTION_TYPES.SUCCESS, data })
+        yield put({ type: PREDICT_ACTION_TYPES.PREDICT_VALUE + COMMON_ACTION_TYPES.SUCCESS, data: data.data.prediction })
         yield put(setAlert)
       } catch (error: any) {
         const setAlert: AlertActionDto = {
