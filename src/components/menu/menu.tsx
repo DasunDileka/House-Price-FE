@@ -1,5 +1,4 @@
 import React from "react";
-import { MenuList } from "../../components";
 import {
   Box,
   Card,
@@ -30,8 +29,8 @@ const ViewMenu: React.FC<{
                           </Typography>
                           <Typography variant="body2">Bedrooms : {item.numberOfBedrooms}</Typography>
                           <Typography variant="body2">Bathrooms :{item.numberOfBathrooms}</Typography>
-                          <Typography variant="body2">Living Area(sqft) :{item.sizeOfLivingArea}</Typography>
-                          <Typography variant="body2">Land Size(perch) :{item.sizeOfLandArea}</Typography>
+                          <Typography variant="body2">Living Area(sqft) :{item.livingAreaSize}</Typography>
+                          <Typography variant="body2">Land Size(perch) :{item.landSize}</Typography>
                           <Typography variant="body2">Price :{item.price}</Typography>
                           <Typography variant="body2">Contact :{item.contact}</Typography>
                       </CardContent>

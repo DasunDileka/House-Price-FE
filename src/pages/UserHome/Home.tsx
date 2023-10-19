@@ -9,7 +9,7 @@ const Home = () => {
   return (
     <><Header /><div className="home" style={{ backgroundImage: `url(${Banner})` }}>
           <div className="headerContainer">
-              <h1>House Website</h1>
+              <h1>Lanka House</h1>
               <p>Best Houses In Srilanka</p>
               <Link to="/signIn">
                   <button>Check Price</button>

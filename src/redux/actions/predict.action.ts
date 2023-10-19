@@ -8,6 +8,14 @@ const predictValue = (payload: PredictionDto) => {
     }
 }
 
+const predictValueClear =()=>
+{
+    return {
+        type: PREDICT_ACTION_TYPES.PREDICT_VALUE + COMMON_ACTION_TYPES.CLEAR
+    }
+}
+
 export const predictAction = {
-    predictValue
+    predictValue,
+    //predictValueClear
 }
