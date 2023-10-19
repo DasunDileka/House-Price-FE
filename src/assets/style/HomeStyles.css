@@ -27,12 +27,12 @@
     margin-top: 15px;
     padding: 0;
     font-size: 40px;
-    font-weight: lighter;
-    color: black;
+    font-weight: bold;
+    color: rgb(112, 133, 127);
   }
   
   .headerContainer button {
-    background-color: #121619;
+    background-color: #aec8f0;
     margin-top: 20px;
     border: none;
     border-radius: 5px;
@@ -60,7 +60,7 @@
     .headerContainer {
       margin-left: 0;
       border-radius: 10px;
-      width: 90%;
+      width: 70%;
       display: flex;
       justify-content: center;
       align-items: center;

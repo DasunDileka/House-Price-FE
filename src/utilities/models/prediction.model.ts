@@ -2,12 +2,12 @@ import { FormValidatorFeildDto } from "./core.model"
 
 export interface PredictionFormInitialStateDto
 {
-    numberOfBedrooms: FormValidatorFeildDto<number | null>
-    numberOfBathrooms: FormValidatorFeildDto<number | null>
-    sizeOfLivingArea: FormValidatorFeildDto<number | null>
-    sizeOfLandArea: FormValidatorFeildDto<number | null>
-    numberOfFloors: FormValidatorFeildDto<number | null>
-    currencyRate: FormValidatorFeildDto<number | null>
+    numberOfBedrooms: FormValidatorFeildDto<string | null>
+    numberOfBathrooms: FormValidatorFeildDto<string | null>
+    sizeOfLivingArea: FormValidatorFeildDto<string | null>
+    sizeOfLandArea: FormValidatorFeildDto<string | null>
+    numberOfFloors: FormValidatorFeildDto<string | null>
+    currencyRate: FormValidatorFeildDto<string | null>
     location: FormValidatorFeildDto<string>
     prediction: FormValidatorFeildDto<string | null>
 }

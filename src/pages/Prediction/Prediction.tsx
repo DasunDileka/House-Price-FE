@@ -12,21 +12,21 @@ import {PredictionForm,Header,Footer} from '../../components';
 const Predictor = () => {
 
   const INITIAL_STATE: PredictionFormInitialStateDto = {
-    numberOfBedrooms: { value: null, isRequired: true, disable: false, error: null, validator: 'number' },
-    numberOfBathrooms: { value: null, isRequired: true, disable: false, error: null, validator: 'number' },
-    sizeOfLivingArea: { value: null, isRequired: true, disable: false, error: null, validator: 'number' },
-    sizeOfLandArea: { value: null, isRequired: true, disable: false, error: null, validator: 'number' },
-    numberOfFloors: { value: null, isRequired: true, disable: false, error: null, validator: 'number' },
-    currencyRate: { value: null, isRequired: true, disable: false, error: null, validator: 'number' },
+    numberOfBedrooms: { value: "", isRequired: true, disable: false, error: null, validator: 'number' },
+    numberOfBathrooms: { value: "", isRequired: true, disable: false, error: null, validator: 'number' },
+    sizeOfLivingArea: { value: "", isRequired: true, disable: false, error: null, validator: 'number' },
+    sizeOfLandArea: { value: "", isRequired: true, disable: false, error: null, validator: 'number' },
+    numberOfFloors: { value: "", isRequired: true, disable: false, error: null, validator: 'number' },
+    currencyRate: { value: "", isRequired: true, disable: false, error: null, validator: 'number' },
     location: { value: "", isRequired: true, disable: false, error: null, validator: 'text' },
-    prediction: { value: null, isRequired: false, disable: false, error: null, validator: 'number' },
+    prediction: { value: "", isRequired: false, disable: false, error: null, validator: 'text' },
   }
 
   const theme = createTheme();
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const [predictForm, setPredictForm] = React.useState(INITIAL_STATE)
-
+  
   const predictResponse = useSelector((state: any) => state.predict.predict)
 
 
@@ -44,22 +44,22 @@ const Predictor = () => {
   //}, [signupUserAlert])
   React.useEffect(() => {
     if(predictResponse.status ===  APP_ACTION_STATUS.SUCCESS){
-      console.log("predictResponce",predictResponse)
+
       setPredictForm({
-        ...predictForm,
+        ...INITIAL_STATE,
         prediction: {
-          ...predictForm.prediction,
+          ...INITIAL_STATE.prediction,
           value: "LKR" + predictResponse.data
         }
       })
+
    }
    }, [predictResponse.status])
 
   const onValidateUser = async () => {
-    // navigate(APP_ROUTES.HOME)
-    console.log('PredictionForm', predictForm)
     const [validateData, isValid] = await validateFormData(predictForm)
     setPredictForm(validateData)
+
     if (isValid) {
       const predictData: PredictionDto = {
         NumberOfBedroom: Number(predictForm.numberOfBedrooms.value),
@@ -70,7 +70,6 @@ const Predictor = () => {
         CurrencyRate: Number(predictForm.currencyRate.value),
         Locations: predictForm.location.value
       }
-      console.log("Checking", predictData)
       dispatch(predictAction.predictValue(predictData))
     }
   }

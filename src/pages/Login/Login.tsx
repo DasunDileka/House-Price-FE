@@ -53,10 +53,12 @@ const Login = () => {
       const loggerUser: SignInUserDetailDto = loginResponse.data
       if (loggerUser) {
         if (loginResponse.data.userType === 'Customer') {
-          window.open(APP_ROUTES.Prediction, '_blank');
+          navigate(APP_ROUTES.Prediction);
+          sessionStorage.setItem("id", loginResponse.data.id.toString());
         //  navigate(APP_ROUTES.CUSTOMER_HOME)
         } else {
           navigate(APP_ROUTES.HOUSE)
+          sessionStorage.setItem("id", loginResponse.data.id.toString());
         }
       }
     }

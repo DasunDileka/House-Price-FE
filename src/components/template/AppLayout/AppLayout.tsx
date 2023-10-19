@@ -38,6 +38,11 @@ const AppLayout: React.FC<{
                   <BadgeOutlined />
                   LogOut
                 </NavLink>
+                <NavLink className={({ isActive }) => (isActive ? 'navLink is-active' : 'navLink')}
+                  to={APP_ROUTES.Prediction} >
+                  <BadgeOutlined />
+                  Prediction
+                </NavLink>
                 </div>
           </aside>
         </aside>

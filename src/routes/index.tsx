@@ -24,6 +24,7 @@ const AppRoutes = () => {
             <Route path={APP_ROUTES.Prediction} Component={Prediction} />
             <Route path={APP_ROUTES.SignIn} Component={Login} />
             <Route path={APP_ROUTES.Menu} Component={Menu} />
+            <Route path="*" element={<PageNotFound /> }/>
             
         </Routes>
     </BrowserRouter>

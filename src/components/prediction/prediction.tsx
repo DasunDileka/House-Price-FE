@@ -28,7 +28,11 @@ const PredictionForm: React.FC<{
               label="NumberOfBedrooms"
               name="numberOfBedrooms"
               autoFocus
+              error={!!props.predict.numberOfBedrooms.error}
               value={props.predict.numberOfBedrooms.value}
+              helperText={props.predict.numberOfBedrooms.error
+                ? props.predict.numberOfBedrooms.error
+                : null}
               onChange={(e) => props.onInputHandleChange('numberOfBedrooms', e.target.value)}
             />
             </Grid>
@@ -40,7 +44,11 @@ const PredictionForm: React.FC<{
               label="NumberOfBathrooms"
               name="numberOfBathrooms"
               autoFocus
+              error={!!props.predict.numberOfBathrooms.error}
               value={props.predict.numberOfBathrooms.value}
+              helperText={props.predict.numberOfBathrooms.error
+                ? props.predict.numberOfBathrooms.error
+                : null}
               onChange={(e) => props.onInputHandleChange('numberOfBathrooms', e.target.value)}
             />
             </Grid>
@@ -52,7 +60,11 @@ const PredictionForm: React.FC<{
               label="SizeOfLivingArea"
               name="sizeOfLivingArea"
               autoFocus
+              error={!!props.predict.sizeOfLivingArea.error}
               value={props.predict.sizeOfLivingArea.value}
+              helperText={props.predict.sizeOfLivingArea.error
+                ? props.predict.sizeOfLivingArea.error
+                : null}
               onChange={(e) => props.onInputHandleChange('sizeOfLivingArea', e.target.value)}
             />
             </Grid>
@@ -62,8 +74,12 @@ const PredictionForm: React.FC<{
               required
               fullWidth
               name="SizeOfLandArea"
-              label="sizeOfLandArea"
+              label="SizeOfLandArea"
+              error={!!props.predict.sizeOfLandArea.error}
               value={props.predict.sizeOfLandArea.value}
+              helperText={props.predict.sizeOfLandArea.error
+                ? props.predict.sizeOfLandArea.error
+                : null}
               onChange={(e) => props.onInputHandleChange('sizeOfLandArea', e.target.value)}
             />
             </Grid>
@@ -75,7 +91,11 @@ const PredictionForm: React.FC<{
               label="NumberOfFloors"
               name="numberOfFloors"
               autoFocus
+              error={!!props.predict.numberOfFloors.error}
               value={props.predict.numberOfFloors.value}
+              helperText={props.predict.numberOfFloors.error
+                ? props.predict.numberOfFloors.error
+                : null}
               onChange={(e) => props.onInputHandleChange('numberOfFloors', e.target.value)}
             />
             </Grid>
@@ -87,7 +107,11 @@ const PredictionForm: React.FC<{
               label="CurrencyRate"
               name="currencyRate"
               autoFocus
+              error={!!props.predict.currencyRate.error}
               value={props.predict.currencyRate.value}
+              helperText={props.predict.currencyRate.error
+                ? props.predict.currencyRate.error
+                : null}
               onChange={(e) => props.onInputHandleChange('currencyRate', e.target.value)}
             />
             </Grid>
@@ -99,7 +123,11 @@ const PredictionForm: React.FC<{
               label="Location"
               name="location"
               autoFocus
+              error={!!props.predict.location.error}
               value={props.predict.location.value}
+              helperText={props.predict.location.error
+                ? props.predict.location.error
+                : null}
               onChange={(e) => props.onInputHandleChange('location', e.target.value)}
             />
             </Grid>

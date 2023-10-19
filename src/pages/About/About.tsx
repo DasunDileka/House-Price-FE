@@ -28,7 +28,7 @@ const About = () => {
               },
           }}
       >
-          <Typography variant="h4">Welcome To My Resturant</Typography>
+          <Typography variant="h4">Welcome To Lanka-House</Typography>
           <h3>
            
            Welcome to our Website, your gateway to the world of real estate and the key to unlocking your dream home.
