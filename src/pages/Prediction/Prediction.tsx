@@ -29,19 +29,6 @@ const Predictor = () => {
   
   const predictResponse = useSelector((state: any) => state.predict.predict)
 
-
-//const predictResponse = useSelector((state: any) => state.data.predict)
-  // signupUserAlert: AlertDto = useSelector((state: any) => state.alert.signupUserAlert)
-  // const signupUser: AlertDto = useSelector((state: any) => state.registration.signupUser)
-
- // React.useEffect(() => {
-  //  if (signupUserAlert.severity === 'success') {
-   //   setPredictForm(INITIAL_STATE)
-      //alert("Registration Successful")
-    //  navigate(APP_ROUTES.ROOT)
-   // }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  //}, [signupUserAlert])
   React.useEffect(() => {
     if(predictResponse.status ===  APP_ACTION_STATUS.SUCCESS){
 
@@ -86,10 +73,13 @@ const Predictor = () => {
 
   return (
     <><Header /><ThemeProvider theme={theme}>
-      <PredictionForm
+      
+        <PredictionForm
         onValidateUser={onValidateUser}
         predict={predictForm}
         onInputHandleChange={onInputHandleChange} />
+      
+      
     </ThemeProvider><Footer /></>
   );
 }

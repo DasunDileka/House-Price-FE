@@ -55,7 +55,6 @@ const Login = () => {
         if (loginResponse.data.userType === 'Customer') {
           navigate(APP_ROUTES.Prediction);
           sessionStorage.setItem("id", loginResponse.data.id.toString());
-        //  navigate(APP_ROUTES.CUSTOMER_HOME)
         } else {
           navigate(APP_ROUTES.HOUSE)
           sessionStorage.setItem("id", loginResponse.data.id.toString());
@@ -72,7 +71,7 @@ const Login = () => {
   const onNavigateToRegister = () => {
     navigate(APP_ROUTES.REGISTER)
   }
-
+  
   const handleInputFocus = (property: string, section: string) => {
     if (section === "SI")
       setSignInForm({
@@ -111,7 +110,7 @@ const Login = () => {
 
   return (
     <ThemeProvider theme={theme}>
-      {(loginAlert.display) && (
+      {(loginResponse.status === APP_ACTION_STATUS.SUCCESS && loginAlert.display) && (
         <div>
           <Snackbar
             open={loginAlert.display}

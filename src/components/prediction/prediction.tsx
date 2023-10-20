@@ -141,7 +141,7 @@ const PredictionForm: React.FC<{
             >
               Enter
             </Button>
-            <Grid item xs={12}>
+            <Grid item xs={18}>
             <TextField
               margin="normal"
               required

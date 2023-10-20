@@ -8,6 +8,13 @@ const signInUser = (params: SignInUserParamsDto) => {
     }
 }
 
+const signInUserClear = () => {
+    return {
+        type: LOGIN_ACTION_TYPES.SIGNIN_USER + COMMON_ACTION_TYPES.CLEAR,
+    }
+}
+
 export const loginActions = {
-    signInUser
+    signInUser,
+    signInUserClear
 }

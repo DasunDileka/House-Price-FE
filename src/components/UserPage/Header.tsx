@@ -13,12 +13,14 @@ import Logo from "../../assets/images/homes.png";
 import MenuIcon from "@mui/icons-material/Menu";
 import { NavLink } from "react-router-dom";
 import "./HeaderStyle.css";
+import { loginActions } from "../../redux/actions";
 const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   // hndle menu click
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
+  
   //menu drawer
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
@@ -46,12 +48,17 @@ const Header = () => {
         <li>
           <NavLink to={"/contact"}>Contact</NavLink>
         </li>
+        
         <li>
           <NavLink to={"/signIn"}>SignIn</NavLink>
         </li>
       </ul>
     </Box>
   );
+  function dispatch(arg0: { type: string; }) {
+    throw new Error("Function not implemented.");
+  }
+
   return (
     <>
       <Box>
@@ -95,6 +102,9 @@ const Header = () => {
                 </li>
                 <li>
                   <NavLink to={"/signIn"}>SignIn</NavLink>
+                 </li>
+                 <li style={{color:"white"}}>
+                  <NavLink to={"/"} onClick={() => {dispatch(loginActions.signInUserClear())}}>SignOut</NavLink>
                  </li>
               </ul>
             </Box>
