@@ -5,4 +5,5 @@ export { default as Header } from './UserPage/Header'
 export { default as Footer } from './UserPage/Footer'
 export { default as PredictionForm } from './prediction/prediction'
 export {default as ViewMenu} from './menu/menu'
+
  

@@ -11,6 +11,7 @@ export enum APP_ROUTES {
   Menu='/menu',
   PageNotFound='/notfound',
   Prediction='/prediction',
-  SignIn='/signIn'
+  SignIn='/signIn',
+  AddHouse='/AddNewHouse'
  
 }

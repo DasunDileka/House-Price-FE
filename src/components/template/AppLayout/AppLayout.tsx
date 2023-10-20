@@ -11,11 +11,15 @@ import DashboardOutlinedIcon from '@mui/icons-material/DashboardOutlined'
 import { BadgeOutlined } from '@mui/icons-material'
 import { NavLink } from 'react-router-dom'
 import { Divider } from '@mui/material'
+import { loginActions } from '../../../redux/actions'
+import { useDispatch } from 'react-redux'
 const AppLayout: React.FC<{
   children: React.ReactNode;
   breadcrumb: any;
   componentTitle: string;
 }> = (props) => {
+  const dispatch = useDispatch()
+
   return (
     <React.Fragment>
       <div className={'layout-row authorizedContainer'}>
@@ -34,15 +38,21 @@ const AppLayout: React.FC<{
                   House Details
                 </NavLink>
                 <NavLink className={({ isActive }) => (isActive ? 'navLink is-active' : 'navLink')}
-                  to={APP_ROUTES.UserHome} >
+                  to={APP_ROUTES.AddHouse} >
                   <BadgeOutlined />
-                  LogOut
+                  Add New House
                 </NavLink>
                 <NavLink className={({ isActive }) => (isActive ? 'navLink is-active' : 'navLink')}
                   to={APP_ROUTES.Prediction} >
                   <BadgeOutlined />
                   Prediction
                 </NavLink>
+                <NavLink className={({ isActive }) => (isActive ? 'navLink is-active' : 'navLink')}
+                  to={APP_ROUTES.UserHome}  onClick={() => {dispatch(loginActions.signInUserClear())}}>
+                  <BadgeOutlined />
+                  LogOut
+                </NavLink>
+            
                 </div>
           </aside>
         </aside>
